@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<!--
+  MFI-9B aircraft for FlightGear.
+
+  Copyright (C) 2012  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <path>MFI-9B.ac</path>
+ <!-- x/y/z == aft/right/up. -->
+ 
+ <!-- Shader effects -->
+ <!-- effect>
+  <inherits-from>Effects/reflect</inherits-from>
+  <object-name>Fuselage</object-name>
+ </effect-->
+
+ <!-- Rembrandt transparency markup. -->
+ <!-- effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>windscreen</object-name>
+ </effect -->
+
+ <!-- Livery selection =====================================================-->
+ <!-- animation>
+  <type>material</type>
+  <object-name>Fuselage</object-name>
+  <property-base>sim/model/livery</property-base>
+  <texture-prop>texture</texture-prop>
+  <texture>Canopus-fuselage.png</texture>
+ </animation -->
+
+ <!-- External lights ======================================================-->
+ <model>
+  <name>Left navigation light</name>
+  <path>Aircraft/ZLT-NT/Models/Lights/RedLight.xml</path>
+  <offsets>
+   <!-- x/y/z == back/right/up -->
+   <x-m> 1.40</x-m>
+   <y-m>-3.65</y-m>
+   <z-m> 0.50</z-m>
+  </offsets>
+ </model>
+ <model>
+  <name>Right navigation light</name>
+  <path>Aircraft/ZLT-NT/Models/Lights/GreenLight.xml</path>
+  <offsets>
+   <!-- x/y/z == back/right/up -->
+   <x-m> 1.40</x-m>
+   <y-m> 3.65</y-m>
+   <z-m> 0.50</z-m>
+  </offsets>
+ </model>
+ <model>
+  <name>Tail navigation light</name>
+  <path>Aircraft/ZLT-NT/Models/Lights/WhiteLight.xml</path>
+  <offsets>
+   <!-- x/y/z == back/right/up -->
+   <x-m> 5.72</x-m>
+   <y-m> 0.00</y-m>
+   <z-m> 0.02</z-m>
+  </offsets>
+ </model>
+
+ <!-- Doors and hatches animations =========================================-->
+ <!-- animation> 
+  <type>pick</type>
+  <object-name>astro_hatch</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>nasal</command>
+    <script>
+      ShortEmpire.astro_hatch.toggle();
+    </script>
+   </binding>
+  </action>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>astro_hatch</object-name>
+  <property>sim/model/doors/astro-hatch/position-norm</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>0.0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>-125.0</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x1-m> -3.20 </x1-m>
+   <y1-m> -0.62 </y1-m>
+   <z1-m>  2.46 </z1-m>
+   <x2-m> -2.92 </x2-m>
+   <y2-m> -0.62 </y2-m>
+   <z2-m>  2.41 </z2-m>
+  </axis>
+ </animation -->
+
+ <!-- Flight control surface animations ====================================-->
+
+ <animation>
+  <type>rotate</type>
+  <object-name>elevator</object-name>
+  <property>surface-positions/elevator-pos-norm</property>
+  <interpolation>
+   <entry>
+    <ind>-1.0</ind>
+    <dep>-16.0</dep>
+   </entry>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>9.0</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>5.60</x-m>
+   <y-m>0.00</y-m>
+   <z-m>0.00</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>rudder</object-name>
+  <property>surface-positions/rudder-pos-norm</property>
+  <interpolation>
+   <entry>
+    <ind>-1.0</ind>
+    <dep>-20.0</dep>
+   </entry>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>20.0</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x1-m>5.37</x1-m>
+   <y1-m>0.00</y1-m>
+   <z1-m>0.15</z1-m>
+   <x2-m>5.67</x2-m>
+   <y2-m>0.00</y2-m>
+   <z2-m>1.20</z2-m>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>aileron.L</object-name>
+  <property>surface-positions/left-aileron-pos-norm</property>
+  <interpolation>
+   <entry>
+    <ind>-1.0</ind>
+    <dep>25.0</dep>
+   </entry>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>-12.0</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x1-m> 2.45</x1-m>
+   <y1-m>-2.61</y1-m>
+   <z1-m> 0.50</z1-m>
+   <x2-m> 2.40</x2-m>
+   <y2-m>-3.44</y2-m>
+   <z2-m> 0.52</z2-m>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>aileron.R</object-name>
+  <property>surface-positions/right-aileron-pos-norm</property>
+  <interpolation>
+   <entry>
+    <ind>-1.0</ind>
+    <dep>25.0</dep>
+   </entry>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>-12.0</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x1-m>2.40</x1-m>
+   <y1-m>3.44</y1-m>
+   <z1-m>0.52</z1-m>
+   <x2-m>2.45</x2-m>
+   <y2-m>2.61</y2-m>
+   <z2-m>0.50</z2-m>
+  </axis>
+ </animation>
+
+ <!-- animation>
+  <type>rotate</type>
+  <object-name>left_flap</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>25.0</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x1-m> -11.44 </x1-m>
+   <y1-m>   9.47 </y1-m>
+   <z1-m>   0.92 </z1-m>
+   <x2-m> -12.41 </x2-m>
+   <y2-m>   1.57 </y2-m>
+   <z2-m>  -0.31 </z2-m>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>right_flap</object-name>
+  <property>surface-positions/flap-pos-norm</property>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>25.0</dep>
+   </entry>
+  </interpolation>
+  <axis>
+   <x1-m> -12.41 </x1-m>
+   <y1-m>  -1.57 </y1-m>
+   <z1-m>  -0.31 </z1-m>
+   <x2-m> -11.44 </x2-m>
+   <y2-m>  -9.47 </y2-m>
+   <z2-m>   0.92 </z2-m>
+  </axis>
+ </animation -->
+
+ <!-- LOD for the model as a whole =========================================-->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>15000</max-m>
+ </animation>
+
+ <nasal>
+  <load>
+##############################################################################
+# The on-load Nasal is not executed when this file is loaded as the user
+# aircraft.
+##############################################################################
+var rplayer = cmdarg();
+print("LOAD MFI-9B ", rplayer.getPath());
+
+# Set up property aliases for animations.
+
+# Set up livery support.
+#var livery_update =
+#  aircraft.livery_update.new("Aircraft/MFI-9/Models/Liveries", 10);
+
+##############################################################################
+  </load>
+  <unload>
+##############################################################################
+var rplayer = cmdarg();
+print("UNLOAD MFI-9B ", rplayer.getPath());
+# Stop the livery support.
+#livery_update.stop();
+##############################################################################
+  </unload>
+ </nasal>
+
+
+</PropertyList>

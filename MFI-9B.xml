@@ -1,0 +1,491 @@
+<?xml version="1.0"?>
+<!--
+
+  MFI-9B flight model for JSBSim.
+
+    Copyright (C) 2012  Anders Gidenstam  (anders(at)gidenstam.org)
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+  
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+  
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+  
+-->
+<?xml-stylesheet type="text/xsl" href="http://jsbsim.sourceforge.net/JSBSim.xsl"?>
+<fdm_config name="MFI-9B" version="2.0" release="ALPHA"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:noNamespaceSchemaLocation="http://jsbsim.sourceforge.net/JSBSim.xsd">
+
+ <fileheader>
+  <author>Anders Gidenstam / DATCOM+ / Aeromatic v 0.95</author>
+  <email>anders at gidenstam dot org</email>
+
+  <filecreationdate>2012-12-28</filecreationdate>
+  <version>$Id$</version>
+
+  <description> Models a MFI-9B. </description>
+  <license>
+   <licenseName>GPL</licenseName>
+   <licenseURL>http://www.gnu.org/licenses/gpl.html</licenseURL>
+  </license>
+  <note>
+   This model was created using publicly available data, publicly available
+   technical reports, textbooks, and guesses. It contains no proprietary or
+   restricted data. It has been validated only to the extent that it may seem
+   to "fly right", and possibly to comply to published, publicly known, 
+   performance data (maximum speed, endurance, etc.).
+
+   This model is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+  </note>
+
+  <reference refID="FR:2012:MFI"
+             author="Sven Stridsberg (ed.)"
+             title="MFI  Flygindustri under ett halvt sekel"
+             date="2012"/>
+
+  <reference refID="Andreasson:198X:MFI9HB"
+             author="Bjorn Andreasson"
+             title="MFI-9HB  Information Package"
+             date="198X"/>
+
+ </fileheader>
+
+<!--
+  File:     MFI-9B.xml
+  Inputs:
+    name:          MFI-9B
+    type:          light single
+    max weight:    1267.875 lb
+    wing span:     24.37783 ft
+    length:        19.19385 ft
+    wing area:     93.6551607 sq-ft
+    gear type:     tricycle
+    retractable?:  no
+    # engines:     1
+    engine type:   piston
+    engine layout: forward fuselage
+    yaw damper?    no
+
+  Outputs:
+    wing loading:  13.54 lb/sq-ft
+    payload:       330.5 lbs
+    CL-alpha:      5 per radian
+    CL-0:          0.25
+    CL-max:        1.4
+    CD-0:          0.028
+    K:             0.04
+
+-->
+
+ <documentation>
+  The origin of the structural frame is at the nose of the aircraft at
+  the tip of the spinner.
+  The coordinate system is aligned with the hull datum line as shown on the
+  drawings in [Andreasson:198X:MFI9HB].
+ </documentation>
+
+ <metrics>
+  <wingarea       unit="M2" >8.70</wingarea>
+  <wingspan       unit="M"  >7.43</wingspan>
+  <wing_incidence unit="DEG">2.00</wing_incidence>
+  <chord          unit="M"  >1.22</chord>
+  <htailarea      unit="FT2">14.98</htailarea>
+  <htailarm       unit="FT" >9.98</htailarm>
+  <vtailarea      unit="FT2">9.37</vtailarea>
+  <vtailarm       unit="FT" >9.60</vtailarm>
+  <location name="AERORP" unit="M">
+   <x>1.90</x>
+   <y>0.00</y>
+   <z>0.50</z>
+  </location>
+  <location name="EYEPOINT" unit="M">
+   <x> 1.80</x>
+   <y>-0.30</y>
+   <z> 0.55 </z>
+  </location>
+  <location name="VRP" unit="M">
+   <x>0</x>
+   <y>0</y>
+   <z>0</z>
+  </location>
+ </metrics>
+
+ <mass_balance>
+  <ixx unit="SLUG*FT2">252</ixx>
+  <iyy unit="SLUG*FT2">278</iyy>
+  <izz unit="SLUG*FT2">487</izz>
+  <emptywt unit="KG">340</emptywt>
+  <location name="CG" unit="M">
+   <x> 1.70</x>
+   <y> 0.00</y>
+   <z> 0.00</z>
+  </location>
+
+  <pointmass name="Left Pilot">
+   <description>Pilot in the left seat</description>
+   <weight unit="KG">90.0</weight>
+   <location name="POINTMASS" unit="M">
+    <x> 1.70</x>
+    <y>-0.30</y>
+    <z> 0.20</z>
+   </location>
+  </pointmass>
+ 
+  <pointmass name="Right Pilot">
+   <description>Pilot in the right seat</description>
+   <weight unit="KG">90.0</weight>
+   <location name="POINTMASS" unit="M">
+    <x> 1.70</x>
+    <y> 0.30</y>
+    <z> 0.20</z>
+   </location>
+  </pointmass> 
+
+  <pointmass name="Luggage">
+   <description>Luggage behind the seats</description>
+   <weight unit="KG">0.0</weight>
+   <location name="POINTMASS" unit="M">
+    <x> 2.40</x>
+    <y> 0.00</y>
+    <z>-0.20</z>
+   </location>
+  </pointmass> 
+
+ </mass_balance>
+
+ <ground_reactions>
+
+  <contact type="BOGEY" name="NOSE">
+   <location unit="M">
+    <x> 0.67</x>
+    <y> 0.00</y>
+    <z>-1.08</z>
+   </location>
+   <static_friction >0.80</static_friction>
+   <dynamic_friction>0.50</dynamic_friction>
+   <rolling_friction>0.02</rolling_friction>
+   <spring_coeff  unit="LBS/FT"    >380.36</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">633.94</damping_coeff>
+   <max_steer unit="DEG">5.00</max_steer>
+   <brake_group>NONE</brake_group>
+   <retractable>0</retractable>
+  </contact>
+
+  <contact type="BOGEY" name="LEFT_MAIN">
+   <location unit="M">
+    <x> 2.05</x>
+    <y>-1.00</y>
+    <z>-0.94</z>
+   </location>
+   <static_friction>  0.80 </static_friction>
+   <dynamic_friction> 0.50 </dynamic_friction>
+   <rolling_friction> 0.02 </rolling_friction>
+   <spring_coeff  unit="LBS/FT"    >1267.88</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC"> 633.94</damping_coeff>
+   <max_steer unit="DEG">0</max_steer>
+   <brake_group>LEFT</brake_group>
+   <retractable>0</retractable>
+  </contact>
+
+  <contact type="BOGEY" name="RIGHT_MAIN">
+   <location unit="M">
+    <x> 2.05</x>
+    <y> 1.00</y>
+    <z>-0.94</z>
+   </location>
+   <static_friction >0.80</static_friction>
+   <dynamic_friction>0.50</dynamic_friction>
+   <rolling_friction>0.02</rolling_friction>
+   <spring_coeff  unit="LBS/FT"    >1267.88</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC"> 633.94</damping_coeff>
+   <max_steer unit="DEG">0</max_steer>
+   <brake_group>RIGHT</brake_group>
+   <retractable>0</retractable>
+  </contact>
+
+  <contact type="STRUCTURE" name="LEFT_WING">
+   <location unit="M">
+    <x> 1.71</x>
+    <y>-3.71</y>
+    <z> 0.47</z>
+   </location>
+   <static_friction >1.00</static_friction>
+   <dynamic_friction>1.00</dynamic_friction>
+   <spring_coeff  unit="LBS/FT"    >1267.88</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">1000.00</damping_coeff>
+  </contact>
+
+  <contact type="STRUCTURE" name="RIGHT_WING">
+   <location unit="M">
+    <x> 1.71</x>
+    <y> 3.71</y>
+    <z> 0.47</z>
+   </location>
+   <static_friction >1.00</static_friction>
+   <dynamic_friction>1.00</dynamic_friction>
+   <spring_coeff  unit="LBS/FT"    >1267.88</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">1000.00</damping_coeff>
+  </contact>
+
+  <contact type="STRUCTURE" name="TAIL">
+   <location unit="M">
+    <x> 5.40</x>
+    <y> 0.00</y>
+    <z>-0.30</z>
+   </location>
+   <static_friction >1.00</static_friction>
+   <dynamic_friction>1.00</dynamic_friction>
+   <spring_coeff  unit="LBS/FT"    >500.00</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">300.00</damping_coeff>
+  </contact>
+
+ </ground_reactions>
+
+ <propulsion>
+
+  <engine file="eng_O-200">
+   <location unit="M">
+    <x>0.70</x>
+    <y>0.00</y>
+    <z>0.00</z>
+   </location>
+   <orient unit="DEG">
+    <pitch>-4.00</pitch>
+    <roll > 0.00</roll>
+    <yaw  > 0.00</yaw>
+   </orient>
+   <feed>0</feed>
+   <thruster file="prop_mccauley_6948">
+    <sense>1</sense>
+    <location unit="M">
+     <x>0.20</x>
+     <y>0.00</y>
+     <z>0.00</z>
+     </location>
+     <orient unit="DEG">
+      <pitch>-4.00</pitch>
+      <roll > 0.00</roll>
+      <yaw  > 0.00</yaw>
+     </orient>
+   </thruster>
+  </engine>
+
+  <tank type="FUEL" number="0">
+   <location unit="M">
+    <x>2.40</x>
+    <y>0.00</y>
+    <z>0.25</z>
+   </location>
+   <capacity unit="KG">57.25</capacity>
+   <contents unit="KG">30.00</contents>
+  </tank>
+
+ </propulsion>
+
+ <flight_control name="FCS: MFI-9B">
+  <documentation>
+   The flight control system creates the properties needed by the
+   Aeromatic generated aerodynamic section as well as those needed by the
+   DATCOM+ generated aerodynamic section.
+
+   Control surface movements according to [Andreasson:198X:MFI9HB]:
+     Ailerons : up 25 deg, down 12 deg
+     Elevator : up 16 deg, down 9 deg
+     Rudder   : +/-20 deg
+     Flaps    : 0 - 35 deg down
+  </documentation>
+
+  <channel name="Elevator">
+
+   <summer name="fcs/elevator/cmd-sum-norm">
+    <input>fcs/elevator-cmd-norm</input>
+    <input>fcs/pitch-trim-cmd-norm</input>
+    <clipto>
+     <min>-1</min>
+     <max> 1</max>
+    </clipto>
+   </summer>
+
+   <pure_gain name="fcs/elevator/pos-norm">
+    <input>fcs/elevator/cmd-sum-norm</input>
+    <gain>1.0</gain>
+    <output>fcs/elevator-pos-norm</output>
+   </pure_gain>
+
+   <aerosurface_scale name="fcs/elevator/pos-deg">
+    <input>fcs/elevator/pos-norm</input>
+    <domain>
+     <min>-1</min>
+     <max> 1</max>
+    </domain>
+    <range>
+     <min>-16.0</min>
+     <max>  9.0</max>
+    </range>
+    <output>fcs/elevator-pos-deg</output>
+   </aerosurface_scale>
+
+   <pure_gain name="fcs/elevator/pos-rad">
+    <input>fcs/elevator/pos-deg</input>
+    <gain>0.017453293</gain>
+    <output>fcs/elevator-pos-rad</output>
+   </pure_gain>
+
+  </channel>
+
+  <channel name="Aileron">
+
+   <summer name="fcs/aileron/cmd-sum-norm">
+    <input>fcs/aileron-cmd-norm</input>
+    <input>fcs/roll-trim-cmd-norm</input>
+    <clipto>
+     <min>-1</min>
+     <max> 1</max>
+    </clipto>
+   </summer>
+
+   <pure_gain name="fcs/aileron/left-pos-norm">
+    <input>fcs/aileron/cmd-sum-norm</input>
+    <gain>1.0</gain>
+    <output>fcs/left-aileron-pos-norm</output>
+   </pure_gain>
+
+   <aerosurface_scale name="fcs/aileron/left-pos-deg">
+    <input>fcs/aileron/left-pos-norm</input>
+    <domain>
+     <min>-1</min>
+     <max> 1</max>
+    </domain>
+    <range>
+     <min>-25.0</min>
+     <max> 12.0</max>
+    </range>
+    <output>fcs/left-aileron-pos-deg</output>
+   </aerosurface_scale>
+
+   <pure_gain name="fcs/aileron/left-pos-rad">
+    <input>fcs/aileron/left-pos-deg</input>
+    <gain>0.017453293</gain>
+    <output>fcs/left-aileron-pos-rad</output>
+   </pure_gain>
+
+
+   <pure_gain name="fcs/aileron/right-pos-norm">
+    <input>-fcs/aileron/cmd-sum-norm</input>
+    <gain>1.0</gain>
+    <output>fcs/right-aileron-pos-norm</output>
+   </pure_gain>
+
+   <aerosurface_scale name="fcs/aileron/right-pos-deg">
+    <input>fcs/aileron/right-pos-norm</input>
+    <domain>
+     <min>-1</min>
+     <max> 1</max>
+    </domain>
+    <range>
+     <min>-25.0</min>
+     <max> 12.0</max>
+    </range>
+    <output>fcs/right-aileron-pos-deg</output>
+   </aerosurface_scale>
+
+   <pure_gain name="fcs/aileron/right-pos-rad">
+    <input>fcs/aileron/right-pos-deg</input>
+    <gain>0.017453293</gain>
+    <output>fcs/right-aileron-pos-rad</output>
+   </pure_gain>
+
+  </channel>
+
+  <channel name="Rudder">
+
+   <summer name="fcs/rudder/cmd-sum-norm">
+    <input>fcs/rudder-cmd-norm</input>
+    <input>fcs/yaw-trim-cmd-norm</input>
+    <clipto>
+     <min>-1.0</min>
+     <max> 1.0</max>
+    </clipto>
+   </summer>
+   
+   <pure_gain name="fcs/rudder/pos-norm">
+    <input>fcs/rudder/cmd-sum-norm</input>
+    <gain>1.0</gain>
+    <output>fcs/rudder-pos-norm</output>
+   </pure_gain>
+
+   <aerosurface_scale name="fcs/rudder/pos-deg">
+    <input>fcs/rudder/pos-norm</input>
+    <domain>
+     <min>-1</min>
+     <max> 1</max>
+    </domain>
+    <range>
+     <min>-20.0</min>
+     <max> 20.0</max>
+    </range>
+    <output>fcs/rudder-pos-deg</output>
+   </aerosurface_scale>
+
+   <pure_gain name="fcs/rudder/pos-rad">
+    <input>fcs/rudder/pos-deg</input>
+    <gain>0.017453293</gain>
+    <output>fcs/rudder-pos-rad</output>
+   </pure_gain>
+
+  </channel>
+
+  <channel name="Flaps">
+
+   <kinematic name="fcs/flap/pos-deg">
+    <input>fcs/flap-cmd-norm</input>
+    <traverse>
+     <setting>
+      <position>0</position>
+      <time    >0</time>
+     </setting>
+     <setting>
+      <position>15</position>
+      <time    > 4</time>
+     </setting>
+     <setting>
+      <position>35</position>
+      <time    > 4</time>
+     </setting>
+    </traverse>
+    <output>fcs/flap-pos-deg</output>
+   </kinematic>
+
+   <aerosurface_scale name="fcs/flap/pos-norm">
+    <input>fcs/flap-pos-deg</input>
+    <domain>
+     <min> 0</min>
+     <max>35</max>
+    </domain>
+    <range>
+     <min>0</min>
+     <max>1</max>
+    </range>
+    <output>fcs/flap-pos-norm</output>
+   </aerosurface_scale>
+
+  </channel>
+
+ </flight_control>
+
+ <!-- aerodynamics file="Systems/aeromatic_aero.xml"/ -->
+ <aerodynamics file="Systems/datcom_aero.xml"/>
+
+</fdm_config>

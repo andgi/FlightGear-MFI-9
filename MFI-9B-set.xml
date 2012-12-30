@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<!--
+  MFI-9B aircraft for FlightGear.
+
+  Copyright (C) 2012  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <sim>
+
+  <description>MFI-9B aircraft.</description>
+  <author>Anders Gidenstam</author>
+  <aircraft-version>$Id$</aircraft-version>
+
+  <status type="string">alpha</status>
+  <!-- rating>
+   <FDM type="int">3</FDM>
+   <systems type="int">2</systems>
+   <cockpit type="int">3</cockpit>
+   <model type="int">3</model>
+  </rating -->
+
+  <flight-model>jsb</flight-model>
+  <aero>MFI-9B</aero>
+
+  <presets>
+   <onground type="bool">true</onground>
+  </presets>
+  <!-- startup>
+   <splash-texture>Aircraft/Short_Empire/splash.png</splash-texture>
+  </startup -->
+
+  <sound>
+   <audible type="bool">true</audible>
+   <path>Aircraft/MFI-9/Sounds/sound.xml</path>
+  </sound>
+
+  <model>
+   <path>Aircraft/MFI-9/Models/MFI-9B.xml</path>
+   <livery>
+    <file type="string"></file>
+   </livery>
+   <mark type="int"/>
+  </model>
+
+  <!-- Aircraft specific help. -->
+  <help include="help.xml"/>
+
+  <!-- systems>
+   <path>Aircraft/Short_Empire/Systems/systems.xml</path>
+  </systems>
+  <instrumentation>
+   <path>Aircraft/Short_Empire/Systems/instrumentation.xml</path>
+  </instrumentation -->
+
+  <view n="0">
+   <internal type="bool">true</internal>
+   <config>
+    <!-- x/y/z == right/up/back -->
+    <x-offset-m type="double">-0.30</x-offset-m>
+    <y-offset-m type="double"> 0.55</y-offset-m>
+    <z-offset-m type="double"> 1.80</z-offset-m>
+    <pitch-offset-deg type="double">-5.0</pitch-offset-deg>
+   </config>
+  </view>
+
+  <view n="100">
+   <!-- Copilot's position. -->
+   <name>Copilot View</name>
+   <internal>true</internal>
+   <config>
+    <!-- x/y/z == right/up/back -->
+    <from-model type="bool">true</from-model>
+    <from-model-idx type="int">0</from-model-idx>
+    <x-offset-m type="double"> 0.30</x-offset-m>
+    <y-offset-m type="double"> 0.55</y-offset-m>
+    <z-offset-m type="double"> 1.80</z-offset-m>
+    <pitch-offset-deg type="double">-5.0</pitch-offset-deg>
+    <default-field-of-view-deg type="double">65</default-field-of-view-deg>
+   </config>
+  </view>
+
+  <!-- Move the center of the external views. -->
+  <view n="1">
+   <config>
+    <target-z-offset-m type="double"> 2.0 </target-z-offset-m>
+   </config>
+  </view>
+  <view n="2">
+   <config>
+    <target-z-offset-m type="double"> 2.0 </target-z-offset-m>
+   </config>
+  </view>
+  <view n="3">
+   <config>
+    <target-z-offset-m type="double"> 2.0 </target-z-offset-m>
+   </config>
+  </view>
+  <view n="5">
+   <config>
+    <target-z-offset-m type="double"> 2.0 </target-z-offset-m>
+   </config>
+  </view>
+  <view n="6">
+   <config>
+    <target-z-offset-m type="double"> 2.0 </target-z-offset-m>
+   </config>
+  </view>
+
+  <chase-distance-m type="double">-25.0</chase-distance-m>
+
+  <multiplay>
+   <generic>
+   </generic>
+  </multiplay>
+
+  <!-- checklists include="Checklists/checklists.xml"/ -->
+
+  <!-- menubar>
+   <default>
+    <menu n="100">
+     <label>Short Empire</label>
+     <item>
+      <label>About</label>
+      <binding>
+       <command>nasal</command>
+       <script>ShortEmpire.about()</script>
+      </binding>
+     </item>
+     <item>
+      <label>Select Livery</label>
+      <binding>
+       <command>nasal</command>
+       <script>aircraft.livery.dialog.toggle()</script>
+      </binding>
+     </item>
+    </menu>
+   </default>
+  </menubar -->
+
+ </sim>
+ 
+ <!-- Set defaults for systems and instruments that need it. -->
+ <systems>
+  <pitot n="1">
+   <serviceable type="bool">1</serviceable>
+  </pitot>
+  <refuel>
+   <serviceable type="bool">0</serviceable>
+  </refuel>
+  <electrical>
+  </electrical>
+ </systems>
+
+ <payload>
+  <weight>
+   <name type="string">Pilot (left)</name>
+   <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+   <min-lb type="double">0.0</min-lb>
+   <max-lb type="double">300.0</max-lb>
+  </weight>
+  <weight>
+   <name type="string">Pilot (right)</name>
+   <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+   <min-lb type="double">0.0</min-lb>
+   <max-lb type="double">300.0</max-lb>
+  </weight>
+  <weight>
+   <name type="string">Luggage</name>
+   <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
+   <min-lb type="double">0.0</min-lb>
+   <max-lb type="double">200.0</max-lb>
+  </weight>
+ </payload>
+
+ <!-- consumables include="Systems/consumables.xml"/ -->
+
+ <limits>
+  <vne type="double">165.0</vne>
+  <mass-and-balance>
+   <maximum-takeoff-mass-lbs type="double">1268</maximum-takeoff-mass-lbs>
+   <maximum-landing-mass-lbs type="double">1268</maximum-landing-mass-lbs>
+  </mass-and-balance>
+ </limits>
+
+ <nasal>
+  <limits>
+   <file>Aircraft/Generic/limits.nas</file>
+  </limits>
+  <!-- Dual control. -->
+  <!-- dual_control_tools>
+   <file>Aircraft/Generic/DualControl/dual-control-tools.nas</file>
+  </dual_control_tools -->
+ </nasal>
+
+ <input>
+  <!-- keyboard include="Systems/keys.xml"/ -->
+ </input>
+
+</PropertyList>

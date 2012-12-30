@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+  MFI-9B aircraft for FlightGear.
+
+  Copyright (C) 2012  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <title>MFI-9B</title>
+ <!-- Specific keys -->
+ <!-- key>
+  <name>C</name>
+  <desc>Toggle engine cutoff</desc>
+ </key -->
+
+ <!-- Handling instructions. -->
+ <text>
+ <!-- Real data -->
+ ____________________Limitations____________________
+ Speeds
+   Max level speed at S/L             :  130 kts  
+   Design diving speed                 :  165 kts
+   Max cruising speed                  :  127 kts
+   Econ. cruising speed                :  113 kts
+   Recommended approach speed :   70 kts
+   Stalling speed, power off         :   43 kts
+
+ Service Ceiling : 15,000 ft
+
+ MTOW            : 1,268 lbs
+
+
+ ______________FlightGear Pilot's Notes_____________
+
+ http://wiki.flightgear.org/index.php/MFI-9
+ </text>
+</PropertyList>
