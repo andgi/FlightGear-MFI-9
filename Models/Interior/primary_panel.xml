@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!--
+  MFI-9B aircraft for FlightGear.
+
+  Copyright (C) 2013  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <!-- No main model. -->
+ <!-- The origin is in the middle of the lower edge of the panel. -->
+ <!-- x/y/z == back/right/up -->
+
+ <!-- Preliminary primary instruments. Top-bottom, left-right  -->
+ <model>
+  <name>Magnetic Compass</name>
+  <path>Aircraft/c172p/Instruments/MagneticCompass/MagneticCompass.xml</path>
+  <offsets>
+   <x-m>0.000</x-m>
+   <y-m>0.000</y-m>
+   <z-m>0.210</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>Airspeed Speed Indicator</name>
+  <path>Aircraft/c172p/Instruments/asi/asi.xml</path>
+  <offsets>
+   <x-m>-0.005</x-m>
+   <y-m>-0.110</y-m>
+   <z-m> 0.155</z-m>
+  </offsets>
+ </model>
+ <model>
+  <name>Attitude Indicator</name>
+  <path>Aircraft/c172p/Instruments/AI/AI.xml</path>
+  <offsets>
+   <x-m>-0.005</x-m>
+   <y-m> 0.000</y-m>
+   <z-m> 0.155</z-m>
+  </offsets>
+ </model>
+ <model>
+  <name>Vertical Speed Indicator</name>
+  <path>Aircraft/c172p/Instruments/VSI/VSI.xml</path>
+  <offsets>
+   <x-m>-0.005</x-m>
+   <y-m> 0.110</y-m>
+   <z-m> 0.155</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>Altimeter</name>
+  <path>Aircraft/Instruments-3d/alt-2/alt2-3d.xml</path>
+  <offsets>
+   <x-m>-0.005</x-m>
+   <y-m>-0.110</y-m>
+   <z-m> 0.055</z-m>
+  </offsets>
+ </model>
+ <model>
+  <name>Horisontal Situation Indicator</name>
+  <path>Aircraft/c172p/Instruments/hi/hi.xml</path>
+  <offsets>
+   <x-m>-0.005</x-m>
+   <y-m>0.000</y-m>
+   <z-m>0.055</z-m>
+  </offsets>
+ </model>
+ <model>
+  <name>Turn Coordinator</name>
+  <path>Aircraft/Instruments-3d/tc/tc.xml</path>
+  <offsets>
+   <x-m>-0.005</x-m>
+   <y-m>0.110</y-m>
+   <z-m>0.055</z-m>
+  </offsets>
+ </model>
+
+ <!-- LOD -->
+ <animation> 
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>10</max-m>
+ </animation>
+
+</PropertyList>

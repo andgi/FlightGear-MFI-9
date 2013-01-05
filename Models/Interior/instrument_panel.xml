@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+  MFI-9B aircraft for FlightGear.
+
+  Copyright (C) 2013  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <!-- No main model. -->
+ <!-- The origin is in the middle of the lower edge of the panel. -->
+ <!-- x/y/z == back/right/up -->
+
+ <!-- LOD -->
+ <animation> 
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>10</max-m>
+ </animation>
+
+</PropertyList>

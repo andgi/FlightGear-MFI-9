@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+  MFI-9B aircraft for FlightGear.
+
+  Copyright (C) 2013  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <!-- The origin is the same as for the main 3d model. -->
+ <path>interior.ac</path>
+ <offsets>
+  <!-- x/y/z == back/right/up -->
+  <x-m>0.000</x-m>
+  <y-m>0.000</y-m>
+  <z-m>0.000</z-m>
+ </offsets>
+
+ <!-- Instrument panel =====================================================-->
+ <model>
+  <name>Panel instruments</name>
+  <path>Aircraft/MFI-9/Models/Interior/instrument_panel.xml</path>
+  <offsets>
+   <!-- x/y/z == back/right/up -->
+   <x-m>1.290</x-m>
+   <y-m>0.000</y-m>
+   <z-m>0.080</z-m>
+   <pitch-deg>-27.0</pitch-deg>
+  </offsets>
+ </model>
+ <model>
+  <name>Primary panel instruments</name>
+  <path>Aircraft/MFI-9/Models/Interior/primary_panel.xml</path>
+  <offsets>
+   <!-- x/y/z == back/right/up -->
+   <x-m> 1.290</x-m>
+   <y-m>-0.165</y-m>
+   <z-m> 0.123</z-m>
+   <pitch-deg>0.0</pitch-deg>
+  </offsets>
+ </model>
+
+ <!-- Flight control animations ============================================-->
+ <animation>
+  <type>rotate</type>
+  <object-name>throttle</object-name>
+  <object-name>throttle_handle</object-name>
+  <property>controls/engines/engine/throttle</property>
+  <interpolation>
+   <entry>
+    <ind>0.0</ind>
+    <dep>45.0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>-24.0</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>1.250</x-m>
+   <y-m>0.000</y-m>
+   <z-m>0.135</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <!-- LOD -->
+ <animation> 
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>500</max-m>
+ </animation>
+
+</PropertyList>

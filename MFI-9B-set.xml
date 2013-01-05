@@ -2,7 +2,7 @@
 <!--
   MFI-9B aircraft for FlightGear.
 
-  Copyright (C) 2012  Anders Gidenstam  (anders(at)gidenstam.org)
+  Copyright (C) 2012 - 2013  Anders Gidenstam  (anders(at)gidenstam.org)
   This file is licensed under the GPL license version 2 or later.
 -->
 <PropertyList>
@@ -15,18 +15,15 @@
 
   <status type="string">alpha</status>
   <!-- rating>
-   <FDM type="int">3</FDM>
-   <systems type="int">2</systems>
-   <cockpit type="int">3</cockpit>
-   <model type="int">3</model>
+   <FDM type="int">2</FDM>
+   <systems type="int">1</systems>
+   <cockpit type="int">1</cockpit>
+   <model type="int">1</model>
   </rating -->
 
   <flight-model>jsb</flight-model>
   <aero>MFI-9B</aero>
 
-  <presets>
-   <onground type="bool">true</onground>
-  </presets>
   <!-- startup>
    <splash-texture>Aircraft/Short_Empire/splash.png</splash-texture>
   </startup -->
@@ -58,10 +55,10 @@
    <internal type="bool">true</internal>
    <config>
     <!-- x/y/z == right/up/back -->
-    <x-offset-m type="double">-0.30</x-offset-m>
+    <x-offset-m type="double">-0.25</x-offset-m>
     <y-offset-m type="double"> 0.55</y-offset-m>
     <z-offset-m type="double"> 1.80</z-offset-m>
-    <pitch-offset-deg type="double">-5.0</pitch-offset-deg>
+    <pitch-offset-deg type="double">-15.0</pitch-offset-deg>
    </config>
   </view>
 
@@ -73,10 +70,10 @@
     <!-- x/y/z == right/up/back -->
     <from-model type="bool">true</from-model>
     <from-model-idx type="int">0</from-model-idx>
-    <x-offset-m type="double"> 0.30</x-offset-m>
+    <x-offset-m type="double"> 0.25</x-offset-m>
     <y-offset-m type="double"> 0.55</y-offset-m>
     <z-offset-m type="double"> 1.80</z-offset-m>
-    <pitch-offset-deg type="double">-5.0</pitch-offset-deg>
+    <pitch-offset-deg type="double">-15.0</pitch-offset-deg>
     <default-field-of-view-deg type="double">65</default-field-of-view-deg>
    </config>
   </view>
@@ -84,27 +81,27 @@
   <!-- Move the center of the external views. -->
   <view n="1">
    <config>
-    <target-z-offset-m type="double"> 2.0 </target-z-offset-m>
+    <target-z-offset-m type="double">2.0</target-z-offset-m>
    </config>
   </view>
   <view n="2">
    <config>
-    <target-z-offset-m type="double"> 2.0 </target-z-offset-m>
+    <target-z-offset-m type="double">2.0</target-z-offset-m>
    </config>
   </view>
   <view n="3">
    <config>
-    <target-z-offset-m type="double"> 2.0 </target-z-offset-m>
+    <target-z-offset-m type="double">2.0</target-z-offset-m>
    </config>
   </view>
   <view n="5">
    <config>
-    <target-z-offset-m type="double"> 2.0 </target-z-offset-m>
+    <target-z-offset-m type="double">2.0</target-z-offset-m>
    </config>
   </view>
   <view n="6">
    <config>
-    <target-z-offset-m type="double"> 2.0 </target-z-offset-m>
+    <target-z-offset-m type="double">2.0</target-z-offset-m>
    </config>
   </view>
 
@@ -120,12 +117,12 @@
   <!-- menubar>
    <default>
     <menu n="100">
-     <label>Short Empire</label>
+     <label>MFI-9</label>
      <item>
       <label>About</label>
       <binding>
        <command>nasal</command>
-       <script>ShortEmpire.about()</script>
+       <script>MFI9.about()</script>
       </binding>
      </item>
      <item>
@@ -143,9 +140,6 @@
  
  <!-- Set defaults for systems and instruments that need it. -->
  <systems>
-  <pitot n="1">
-   <serviceable type="bool">1</serviceable>
-  </pitot>
   <refuel>
    <serviceable type="bool">0</serviceable>
   </refuel>
