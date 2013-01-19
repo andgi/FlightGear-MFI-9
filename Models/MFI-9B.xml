@@ -223,9 +223,9 @@
   </axis>
  </animation>
 
- <!-- animation>
+ <animation>
   <type>rotate</type>
-  <object-name>left_flap</object-name>
+  <object-name>flap.L</object-name>
   <property>surface-positions/flap-pos-norm</property>
   <interpolation>
    <entry>
@@ -234,21 +234,21 @@
    </entry>
    <entry>
     <ind>1.0</ind>
-    <dep>25.0</dep>
+    <dep>35.0</dep>
    </entry>
   </interpolation>
   <axis>
-   <x1-m> -11.44 </x1-m>
-   <y1-m>   9.47 </y1-m>
-   <z1-m>   0.92 </z1-m>
-   <x2-m> -12.41 </x2-m>
-   <y2-m>   1.57 </y2-m>
-   <z2-m>  -0.31 </z2-m>
+   <x1-m> 2.417</x1-m>
+   <y1-m>-2.611</y1-m>
+   <z1-m> 0.503</z1-m>
+   <x2-m> 2.529</x2-m>
+   <y2-m>-0.464</y2-m>
+   <z2-m> 0.466</z2-m>
   </axis>
  </animation>
  <animation>
   <type>rotate</type>
-  <object-name>right_flap</object-name>
+  <object-name>flap.R</object-name>
   <property>surface-positions/flap-pos-norm</property>
   <interpolation>
    <entry>
@@ -257,18 +257,57 @@
    </entry>
    <entry>
     <ind>1.0</ind>
-    <dep>25.0</dep>
+    <dep>35.0</dep>
    </entry>
   </interpolation>
   <axis>
-   <x1-m> -12.41 </x1-m>
-   <y1-m>  -1.57 </y1-m>
-   <z1-m>  -0.31 </z1-m>
-   <x2-m> -11.44 </x2-m>
-   <y2-m>  -9.47 </y2-m>
-   <z2-m>   0.92 </z2-m>
+   <x1-m> 2.529</x1-m>
+   <y1-m> 0.464</y1-m>
+   <z1-m> 0.466</z1-m>
+   <x2-m> 2.417</x2-m>
+   <y2-m> 2.611</y2-m>
+   <z2-m> 0.503</z2-m>
   </axis>
- </animation -->
+ </animation>
+
+ <!-- Landing gear animations ==============================================-->
+
+ <animation>
+  <type>translate</type>
+  <object-name>tyre</object-name>
+  <property>/gear/gear[0]/compression-ft</property>
+  <factor>0.3048</factor>
+  <offset-m>0.0</offset-m>
+  <axis>
+   <x> 0.0 </x>
+   <y> 0.0 </y>
+   <z> 1.0 </z>
+  </axis>
+ </animation>
+ <animation>
+  <type>translate</type>
+  <object-name>tyre.L</object-name>
+  <property>/gear/gear[1]/compression-ft</property>
+  <factor>0.3048</factor>
+  <offset-m>0.0</offset-m>
+  <axis>
+   <x> 0.0 </x>
+   <y> 0.0 </y>
+   <z> 1.0 </z>
+  </axis>
+ </animation>
+ <animation>
+  <type>translate</type>
+  <object-name>tyre.R</object-name>
+  <property>/gear/gear[2]/compression-ft</property>
+  <factor>0.3048</factor>
+  <offset-m>0.0</offset-m>
+  <axis>
+   <x> 0.0 </x>
+   <y> 0.0 </y>
+   <z> 1.0 </z>
+  </axis>
+ </animation>
 
  <!-- LOD for the model as a whole =========================================-->
  <animation>
