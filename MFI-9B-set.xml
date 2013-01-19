@@ -44,12 +44,12 @@
   <!-- Aircraft specific help. -->
   <help include="help.xml"/>
 
-  <!-- systems>
-   <path>Aircraft/Short_Empire/Systems/systems.xml</path>
+  <systems>
+   <path>Aircraft/MFI-9/Systems/systems.xml</path>
   </systems>
   <instrumentation>
-   <path>Aircraft/Short_Empire/Systems/instrumentation.xml</path>
-  </instrumentation -->
+   <path>Aircraft/MFI-9/Systems/instrumentation.xml</path>
+  </instrumentation>
 
   <view n="0">
    <internal type="bool">true</internal>
@@ -146,6 +146,14 @@
   <electrical>
   </electrical>
  </systems>
+ <instrumentation>
+  <oil-pressure-gauge>
+   <serviceable type="bool">1</serviceable>
+  </oil-pressure-gauge>
+  <oil-temperature-gauge>
+   <serviceable type="bool">1</serviceable>
+  </oil-temperature-gauge>
+ </instrumentation>
 
  <payload>
   <weight>
@@ -186,6 +194,9 @@
   <!-- dual_control_tools>
    <file>Aircraft/Generic/DualControl/dual-control-tools.nas</file>
   </dual_control_tools -->
+  <KX165>
+   <file>Aircraft/Generic/DualControl/Instruments/KX165/kx165tso.nas</file>
+  </KX165>
  </nasal>
 
  <input>

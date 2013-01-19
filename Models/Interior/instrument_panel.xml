@@ -11,11 +11,50 @@
  <!-- The origin is in the middle of the lower edge of the panel. -->
  <!-- x/y/z == back/right/up -->
 
+ <!-- Preliminary primary instruments. Top-bottom, left-right.  -->
+ <model>
+  <name>Oil Pressure Indicator</name>
+  <path>Aircraft/Short_Empire/Instruments/OilPressure/oil_pressure.xml</path>
+  <offsets>
+   <x-m>-0.010</x-m>
+   <y-m> 0.051</y-m>
+   <z-m> 0.254</z-m>
+  </offsets>
+ </model>
+ <model>
+  <name>Oil Temperature Indicator</name>
+  <path>Aircraft/Short_Empire/Instruments/OilTemperatureGauge/oil_temperature_gauge.xml</path>
+  <offsets>
+   <x-m>-0.010</x-m>
+   <y-m> 0.051</y-m>
+   <z-m> 0.190</z-m>
+  </offsets>
+ </model>
+ <model>
+  <name>RPM Indicator</name>
+  <path>Aircraft/c172p/Instruments/RPM/RPM.xml</path>
+  <offsets>
+   <x-m>0.000</x-m>
+   <y-m>0.051</y-m>
+   <z-m>0.115</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <name>KX-165 NAV-COMM Radio</name>
+  <path>Aircraft/Generic/DualControl/Instruments/KX165/kx165tso1.xml</path>
+  <offsets>
+   <x-m>0.000</x-m>
+   <y-m>0.225</y-m>
+   <z-m>0.115</z-m>
+  </offsets>
+ </model>
+
  <!-- LOD -->
  <animation> 
   <type>range</type>
   <min-m>0</min-m>
-  <max-m>10</max-m>
+  <max-m>50</max-m>
  </animation>
 
 </PropertyList>

@@ -16,3 +16,4 @@ Dependencies (i.e. install these aircraft):
 
 Aircraft/ZLT-NT         (Models/Lights/{Green,Red,White}Light.xml)
 Aircraft/c172p          (most of the instruments)
+Aircraft/Short_Empire   (Instruments/{OilPressure,OilTemperatureGauge}/)
