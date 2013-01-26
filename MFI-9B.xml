@@ -32,7 +32,7 @@
   <filecreationdate>2012-12-28</filecreationdate>
   <version>$Id$</version>
 
-  <description> Models a MFI-9B. </description>
+  <description>Models a MFI-9B.</description>
   <license>
    <licenseName>GPL</licenseName>
    <licenseURL>http://www.gnu.org/licenses/gpl.html</licenseURL>
@@ -59,6 +59,16 @@
              author="Bjorn Andreasson"
              title="MFI-9HB  Information Package"
              date="198X"/>
+
+  <reference refID="Bölkow:1965:BH"
+             author="Bölkow-Apparatebau GMBH"
+             title="Betriebs-Handbuch Bölkow Bo 208 C Junior"
+             date="1965"/>
+
+  <reference refID="Bölkow:1965:FHWN610"
+             author="Bölkow-Apparatebau GMBH"
+             title="Flughandbuch Bölkow Bo 208 C Junior"
+             date="1966"/>
 
  </fileheader>
 
@@ -254,6 +264,18 @@
  </ground_reactions>
 
  <propulsion>
+  <documentation>
+
+   According to [Bölkow:1965:BH] the choices of engine are
+   - Continental O-200 A
+   - Rolls-Royce O-200 A
+   Continuous power: 100hp @ 2750 RPM
+
+   According to [Bölkow:1965:BH] the choices of propeller are
+   - McCauley 1 A 100 MCM 6955
+   - McCauley 1 A 100 MCM 6950 (climb propeller)
+   - McCauley 1 A 100 MCM 6758
+  </documentation>
 
   <engine file="eng_O-200">
    <location unit="M">
@@ -267,7 +289,7 @@
     <yaw  > 0.00</yaw>
    </orient>
    <feed>0</feed>
-   <thruster file="prop_mccauley_6948">
+   <thruster file="prop_mccauley_6955">
     <sense>1</sense>
     <location unit="M">
      <x>0.20</x>
