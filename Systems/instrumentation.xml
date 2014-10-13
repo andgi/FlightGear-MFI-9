@@ -2,7 +2,7 @@
 <!--
   MFI-9B aircraft for FlightGear.
 
-  Copyright (C) 2013  Anders Gidenstam  (anders(at)gidenstam.org)
+  Copyright (C) 2013 - 2014  Anders Gidenstam  (anders(at)gidenstam.org)
   This file is licensed under the GPL license version 2 or later.
 -->
 <PropertyList>
@@ -67,6 +67,10 @@
   <name>adf</name>
   <number>0</number>
  </adf>
+ <comm-radio>
+  <name>comm</name>
+  <number>0</number>
+ </comm-radio>
  <nav-radio>
   <name>nav</name>
   <number>0</number>
@@ -75,5 +79,7 @@
   <name>marker-beacon</name>
   <number>0</number>
  </marker-beacon>
+ <transponder>
+ </transponder>
 
 </PropertyList>
