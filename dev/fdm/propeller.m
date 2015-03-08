@@ -46,27 +46,33 @@ C_Thrust1 = [JP(:,1) JP(:,3)];
 
 C_Power1 = [JP(:,1) JP(:,4)];
 
-Efficiency = C_Thrust1(:,1) .* C_Thrust1(:,2) ./ C_Power1(:,2);
+Efficiency1 = C_Thrust1(:,1) .* C_Thrust1(:,2) ./ C_Power1(:,2);
 
 %% Thrust and Power v.s. advance ratio.
 
 figure();
 axis();
-plot(C_Thrust1(:,1), C_Thrust1(:,2),\
+plot(C_Thrust1(:,1), C_Thrust1(:,2),
      C_Power1(:,1), C_Power1(:,2));
 
 %% Efficiency v.s. advance ratio.
 figure();
 axis([0 1 0 1]);
-plot(C_Thrust1(:,1), Efficiency);
+plot(C_Thrust1(:,1), Efficiency1);
 
 Advance = 0:0.05:2.00;
 
-C_Thrust = [Advance' \
+C_Thrust = [Advance'\
             interp1(C_Thrust1(:,1),C_Thrust1(:,2), Advance, 'extrap')'];
 
-C_Power = [Advance' \
-           interp1(C_Power1(:,1),C_Power1(:,2), Advance, 0.01)'];
+C_Power = [Advance'\
+           interp1(C_Power1(:,1),C_Power1(:,2), Advance, 'extrap')'];
 
 figure();
 plot(Advance, C_Thrust(:,2), Advance, C_Power(:,2));
+
+%% Efficiency v.s. advance ratio.
+Efficiency = C_Thrust(:,1) .* C_Thrust(:,2) ./ C_Power(:,2);
+figure();
+axis([0 1 0 1]);
+plot(C_Thrust(:,1), Efficiency);
