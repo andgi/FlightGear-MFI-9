@@ -60,7 +60,7 @@ figure();
 axis([0 1 0 1]);
 plot(C_Thrust1(:,1), Efficiency1);
 
-Advance = 0:0.05:2.00;
+Advance = [0:0.05:2.00 100.0];
 
 C_Thrust = [Advance'\
             interp1(C_Thrust1(:,1),C_Thrust1(:,2), Advance, 'extrap')'];
