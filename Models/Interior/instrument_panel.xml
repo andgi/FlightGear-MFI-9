@@ -2,7 +2,7 @@
 <!--
   MFI-9B aircraft for FlightGear.
 
-  Copyright (C) 2013  Anders Gidenstam  (anders(at)gidenstam.org)
+  Copyright (C) 2013 - 2015  Anders Gidenstam  (anders(at)gidenstam.org)
   This file is licensed under the GPL license version 2 or later.
 -->
 <PropertyList>
@@ -16,7 +16,7 @@
   <name>Oil Pressure Indicator</name>
   <path>Aircraft/Short_Empire/Instruments/OilPressure/oil_pressure.xml</path>
   <offsets>
-   <x-m>-0.010</x-m>
+   <x-m>-0.005</x-m>
    <y-m> 0.051</y-m>
    <z-m> 0.254</z-m>
   </offsets>
@@ -25,19 +25,26 @@
   <name>Oil Temperature Indicator</name>
   <path>Aircraft/Short_Empire/Instruments/OilTemperatureGauge/oil_temperature_gauge.xml</path>
   <offsets>
-   <x-m>-0.010</x-m>
+   <x-m>-0.005</x-m>
    <y-m> 0.051</y-m>
    <z-m> 0.190</z-m>
   </offsets>
  </model>
  <model>
   <name>RPM Indicator</name>
-  <path>Aircraft/c172p/Instruments/RPM/RPM.xml</path>
+  <path>Aircraft/c172p/Models/Interior/Panel/Instruments/RPM/RPM.xml</path>
   <offsets>
-   <x-m>0.000</x-m>
+   <x-m>0.005</x-m>
    <y-m>0.051</y-m>
    <z-m>0.115</z-m>
   </offsets>
+  <overlay>
+   <params>
+    <engine>
+     <rpm>engines/engine[0]/rpm</rpm>
+    </engine>
+   </params>
+  </overlay>
  </model>
 
  <model>
