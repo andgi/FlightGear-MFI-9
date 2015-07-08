@@ -3,7 +3,7 @@
 
   MFI-9B flight model for JSBSim.
 
-    Copyright (C) 2012 - 2013  Anders Gidenstam  (anders(at)gidenstam.org)
+    Copyright (C) 2012 - 2015  Anders Gidenstam  (anders(at)gidenstam.org)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@
   <email>anders at gidenstam dot org</email>
 
   <filecreationdate>2012-12-28</filecreationdate>
-  <version>$Id$</version>
+  <version>2015-07-08</version>
 
   <description>Models a MFI-9B.</description>
   <license>
@@ -181,7 +181,7 @@
    <location unit="M">
     <x> 0.67</x>
     <y> 0.00</y>
-    <z>-1.08</z>
+    <z>-1.13</z>
    </location>
    <static_friction >0.80</static_friction>
    <dynamic_friction>0.50</dynamic_friction>
@@ -197,7 +197,7 @@
    <location unit="M">
     <x> 2.05</x>
     <y>-1.00</y>
-    <z>-0.94</z>
+    <z>-1.04</z>
    </location>
    <static_friction>  0.80 </static_friction>
    <dynamic_friction> 0.50 </dynamic_friction>
@@ -213,7 +213,7 @@
    <location unit="M">
     <x> 2.05</x>
     <y> 1.00</y>
-    <z>-0.94</z>
+    <z>-1.04</z>
    </location>
    <static_friction >0.80</static_friction>
    <dynamic_friction>0.50</dynamic_friction>

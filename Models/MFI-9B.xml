@@ -2,7 +2,7 @@
 <!--
   MFI-9B aircraft for FlightGear.
 
-  Copyright (C) 2012 - 2013  Anders Gidenstam  (anders(at)gidenstam.org)
+  Copyright (C) 2012 - 2015  Anders Gidenstam  (anders(at)gidenstam.org)
   This file is licensed under the GPL license version 2 or later.
 -->
 <PropertyList>
@@ -277,35 +277,100 @@
   <object-name>tyre</object-name>
   <property>/gear/gear[0]/compression-ft</property>
   <factor>0.3048</factor>
-  <offset-m>0.0</offset-m>
+  <offset-m>-0.05</offset-m>
   <axis>
    <x> 0.0 </x>
    <y> 0.0 </y>
    <z> 1.0 </z>
   </axis>
  </animation>
+
+ <!--
+   Interpolation computed in Octave:
+     % Radius of landing gear arm.
+     r = sqrt(0.38^2 + 0.59^2);
+     % Compression in ft.
+     x = 0:0.5:2.0
+     % Offset, the unloaded gear is 0.10 m below the "level" position.
+     a0 = 8.1712;
+     % Rotation in deg. Simplifying assumption: x is the length of a segment.
+     a = 2*asin(0.3048*x./(2*r)) * 180/pi - a0
+ -->
  <animation>
-  <type>translate</type>
+  <type>rotate</type>
+  <object-name>landing_gear.L</object-name>
   <object-name>tyre.L</object-name>
   <property>/gear/gear[1]/compression-ft</property>
-  <factor>0.3048</factor>
-  <offset-m>0.0</offset-m>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>-8.1712</dep>
+   </entry>
+   <entry>
+    <ind>0.5</ind>
+    <dep>4.2958</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>16.9135</dep>
+   </entry>
+   <entry>
+    <ind>1.5</ind>
+    <dep>29.8498</dep>
+   </entry>
+   <entry>
+    <ind>2.0</ind>
+    <dep>43.3131</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>2.05</x-m>
+   <y-m>-0.41</y-m>
+   <z-m>-0.38</z-m>
+  </center>
   <axis>
-   <x> 0.0 </x>
-   <y> 0.0 </y>
-   <z> 1.0 </z>
+   <x>-1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
   </axis>
  </animation>
+
  <animation>
-  <type>translate</type>
+  <type>rotate</type>
+  <object-name>landing_gear.R</object-name>
   <object-name>tyre.R</object-name>
   <property>/gear/gear[2]/compression-ft</property>
-  <factor>0.3048</factor>
-  <offset-m>0.0</offset-m>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>-8.1712</dep>
+   </entry>
+   <entry>
+    <ind>0.5</ind>
+    <dep>4.2958</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>16.9135</dep>
+   </entry>
+   <entry>
+    <ind>1.5</ind>
+    <dep>29.8498</dep>
+   </entry>
+   <entry>
+    <ind>2.0</ind>
+    <dep>43.3131</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>2.05</x-m>
+   <y-m>0.41</y-m>
+   <z-m>-0.38</z-m>
+  </center>
   <axis>
-   <x> 0.0 </x>
-   <y> 0.0 </y>
-   <z> 1.0 </z>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
   </axis>
  </animation>
 
