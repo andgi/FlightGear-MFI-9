@@ -272,16 +272,109 @@
 
  <!-- Landing gear animations ==============================================-->
 
+ <!--
+   Interpolation computed in Octave:
+     % Radius of nose landing gear arm.
+     r = 0.286;
+     % Compression in ft.
+     x = 0:0.25:0.75
+     % Offset
+     a0 = 25 * pi/180;
+     % Rotation in deg.
+     a = (a0 - asin(sin(a0) - 0.3048*x./r)) * 180/pi
+ -->
  <animation>
-  <type>translate</type>
+  <type>rotate</type>
+  <object-name>NLG_fork</object-name>
+  <object-name>NLG_hub</object-name>
   <object-name>tyre</object-name>
   <property>/gear/gear[0]/compression-ft</property>
-  <factor>0.3048</factor>
-  <offset-m>-0.05</offset-m>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>0.00</dep>
+   </entry>
+   <entry>
+    <ind>0.25</ind>
+    <dep>16.01449</dep>
+   </entry>
+   <entry>
+    <ind>0.50</ind>
+    <dep>31.32966</dep>
+   </entry>
+   <entry>
+    <ind>0.75</ind>
+    <dep>47.12834</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0.549</x-m>
+   <y-m>0.000</y-m>
+   <z-m>-0.641</z-m>
+  </center>
   <axis>
-   <x> 0.0 </x>
-   <y> 0.0 </y>
-   <z> 1.0 </z>
+   <x>0.0</x>
+   <y>-1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>scale</type>
+  <object-name>NLG_damper_rod</object-name>
+  <property>/gear/gear[0]/compression-ft</property>
+  <interpolation>
+   <entry>
+    <ind>0</ind>
+    <dep>1.00</dep>
+   </entry>
+   <entry>
+    <ind>0.75</ind>
+    <dep>0.75</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0.781</x-m>
+   <y-m>0.000</y-m>
+   <z-m>-0.501</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>0.70711</y>
+   <z>-0.70711</z>
+  </axis>
+ </animation>
+ <animation>
+  <type>rotate</type>
+  <object-name>NLG_strut</object-name>
+  <object-name>NLG_damper</object-name>
+  <object-name>NLG_damper_rod</object-name>
+  <object-name>NLG_fork</object-name>
+  <object-name>NLG_hub</object-name>
+  <object-name>tyre</object-name>
+  <property>/gear/gear[0]/steering-norm</property>
+  <interpolation>
+   <entry>
+    <ind>-1.0</ind>
+    <dep>-15.0</dep>
+   </entry>
+   <entry>
+    <ind>0</ind>
+    <dep>0</dep>
+   </entry>
+   <entry>
+    <ind>1.0</ind>
+    <dep>15.0</dep>
+   </entry>
+  </interpolation>
+  <center>
+   <x-m>0.840</x-m>
+   <y-m>0.000</y-m>
+   <z-m>-0.240</z-m>
+  </center>
+  <axis>
+   <x>-0.22495</x>
+   <y>0.0</y>
+   <z>-0.97437</z>
   </axis>
  </animation>
 
@@ -299,6 +392,7 @@
  <animation>
   <type>rotate</type>
   <object-name>landing_gear.L</object-name>
+  <object-name>MLG_hub.L</object-name>
   <object-name>tyre.L</object-name>
   <property>/gear/gear[1]/compression-ft</property>
   <interpolation>
@@ -338,6 +432,7 @@
  <animation>
   <type>rotate</type>
   <object-name>landing_gear.R</object-name>
+  <object-name>MLG_hub.R</object-name>
   <object-name>tyre.R</object-name>
   <property>/gear/gear[2]/compression-ft</property>
   <interpolation>

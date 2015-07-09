@@ -30,7 +30,7 @@
   <email>anders at gidenstam dot org</email>
 
   <filecreationdate>2012-12-28</filecreationdate>
-  <version>2015-07-08</version>
+  <version>2015-07-09</version>
 
   <description>Models a MFI-9B.</description>
   <license>
@@ -181,14 +181,14 @@
    <location unit="M">
     <x> 0.67</x>
     <y> 0.00</y>
-    <z>-1.13</z>
+    <z>-1.12</z>
    </location>
    <static_friction >0.80</static_friction>
    <dynamic_friction>0.50</dynamic_friction>
    <rolling_friction>0.02</rolling_friction>
-   <spring_coeff  unit="LBS/FT"    >570.0</spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">633.94</damping_coeff>
-   <max_steer unit="DEG">5.00</max_steer>
+   <spring_coeff  unit="LBS/FT"    >700.0</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">350.0</damping_coeff>
+   <max_steer unit="DEG">15.00</max_steer>
    <brake_group>NONE</brake_group>
    <retractable>0</retractable>
   </contact>
@@ -234,7 +234,7 @@
    <static_friction >1.00</static_friction>
    <dynamic_friction>1.00</dynamic_friction>
    <spring_coeff  unit="LBS/FT"    >1267.88</spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">1000.00</damping_coeff>
+   <damping_coeff unit="LBS/FT/SEC">600.00</damping_coeff>
   </contact>
 
   <contact type="STRUCTURE" name="RIGHT_WING">
@@ -246,7 +246,7 @@
    <static_friction >1.00</static_friction>
    <dynamic_friction>1.00</dynamic_friction>
    <spring_coeff  unit="LBS/FT"    >1267.88</spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">1000.00</damping_coeff>
+   <damping_coeff unit="LBS/FT/SEC">600.00</damping_coeff>
   </contact>
 
   <contact type="STRUCTURE" name="TAIL">
