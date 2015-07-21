@@ -2,7 +2,7 @@
 <!--
   MFI-9B aircraft for FlightGear.
 
-  Copyright (C) 2012 - 2013  Anders Gidenstam  (anders(at)gidenstam.org)
+  Copyright (C) 2012 - 2015  Anders Gidenstam  (anders(at)gidenstam.org)
   This file is licensed under the GPL license version 2 or later.
 -->
 <PropertyList>
@@ -11,15 +11,15 @@
 
   <description>MFI-9B aircraft.</description>
   <author>Anders Gidenstam</author>
-  <aircraft-version>$Id$</aircraft-version>
+  <aircraft-version>2015-07-21</aircraft-version>
 
   <status type="string">alpha</status>
-  <!-- rating>
-   <FDM type="int">2</FDM>
+  <rating>
+   <FDM type="int">1</FDM>
    <systems type="int">1</systems>
-   <cockpit type="int">1</cockpit>
-   <model type="int">1</model>
-  </rating -->
+   <cockpit type="int">2</cockpit>
+   <model type="int">2</model>
+  </rating>
 
   <flight-model>jsb</flight-model>
   <aero>MFI-9B</aero>
@@ -38,7 +38,6 @@
    <livery>
     <file type="string"></file>
    </livery>
-   <mark type="int"/>
   </model>
 
   <!-- Aircraft specific help. -->
@@ -114,17 +113,17 @@
 
   <!-- checklists include="Checklists/checklists.xml"/ -->
 
-  <!-- menubar>
+  <menubar>
    <default>
     <menu n="100">
      <label>MFI-9</label>
-     <item>
+     <!-- item>
       <label>About</label>
       <binding>
        <command>nasal</command>
        <script>MFI9.about()</script>
       </binding>
-     </item>
+     </item -->
      <item>
       <label>Select Livery</label>
       <binding>
@@ -134,7 +133,7 @@
      </item>
     </menu>
    </default>
-  </menubar -->
+  </menubar>
 
  </sim>
  
@@ -197,6 +196,12 @@
   <KX165>
    <file>Aircraft/Generic/DualControl/Instruments/KX165/kx165tso.nas</file>
   </KX165>
+  <MFI9>
+   <script>
+     aircraft.livery.init("Aircraft/MFI-9/Models/Liveries");
+     print("Livery support ... initialized!");   
+   </script>
+  </MFI9>
  </nasal>
 
  <input>

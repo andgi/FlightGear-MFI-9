@@ -23,13 +23,41 @@
  </effect -->
 
  <!-- Livery selection =====================================================-->
- <!-- animation>
+ <animation>
   <type>material</type>
-  <object-name>Fuselage</object-name>
+  <object-name>aileron.L</object-name>
+  <object-name>aileron.L_0</object-name>
+  <object-name>aileron.L_1</object-name>
+  <object-name>aileron.R</object-name>
+  <object-name>aileron.R_0</object-name>
+  <object-name>aileron.R_1</object-name>
+  <object-name>cowling</object-name>
+  <object-name>elevator</object-name>
+  <object-name>elevator_0</object-name>
+  <object-name>elevator_1</object-name>
+  <object-name>flap.L</object-name>
+  <object-name>flap.L_0</object-name>
+  <object-name>flap.L_1</object-name>
+  <object-name>flap.R</object-name>
+  <object-name>flap.R_0</object-name>
+  <object-name>flap.R_1</object-name>
+  <object-name>fuselage</object-name>
+  <object-name>hstab.tmp</object-name>
+  <object-name>hstab.tmp_0</object-name>
+  <object-name>hstab.tmp_1</object-name>
+  <object-name>rudder</object-name>
+  <object-name>rudder_0</object-name>
+  <object-name>rudder_1</object-name>
+  <object-name>vstab</object-name>
+  <object-name>vstab_0</object-name>
+  <object-name>vstab_1</object-name>
+  <object-name>wing</object-name>
+  <object-name>wing_0</object-name>
+  <object-name>wing_1</object-name>
   <property-base>sim/model/livery</property-base>
   <texture-prop>texture</texture-prop>
-  <texture>Canopus-fuselage.png</texture>
- </animation -->
+  <texture>white.png</texture>
+ </animation>
 
  <!-- Interior =============================================================-->
  <model>
@@ -488,8 +516,8 @@ print("LOAD MFI-9B ", rplayer.getPath());
 # Set up property aliases for animations.
 
 # Set up livery support.
-#var livery_update =
-#  aircraft.livery_update.new("Aircraft/MFI-9/Models/Liveries", 10);
+var livery_update =
+  aircraft.livery_update.new("Aircraft/MFI-9/Models/Liveries", 10);
 
 ##############################################################################
   </load>
@@ -498,7 +526,7 @@ print("LOAD MFI-9B ", rplayer.getPath());
 var rplayer = cmdarg();
 print("UNLOAD MFI-9B ", rplayer.getPath());
 # Stop the livery support.
-#livery_update.stop();
+livery_update.stop();
 ##############################################################################
   </unload>
  </nasal>
