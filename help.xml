@@ -2,7 +2,7 @@
 <!--
   MFI-9B aircraft for FlightGear.
 
-  Copyright (C) 2012  Anders Gidenstam  (anders(at)gidenstam.org)
+  Copyright (C) 2012 - 2015  Anders Gidenstam  (anders(at)gidenstam.org)
   This file is licensed under the GPL license version 2 or later.
 -->
 <PropertyList>
@@ -26,10 +26,10 @@
    Recommended approach speed :   70 kts
    Stalling speed, power off         :   43 kts
 
- Service Ceiling : 15,000 ft
+ Service Ceiling :  15,000 ft
 
- MTOW            : 1,268 lbs
-
+ MTOW utility cat.:   1,268 lbs
+ MTOW normal cat.:  1,325 lbs
 
  ______________FlightGear Pilot's Notes_____________
 

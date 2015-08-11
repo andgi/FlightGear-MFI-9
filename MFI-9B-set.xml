@@ -11,7 +11,7 @@
 
   <description>MFI-9B aircraft.</description>
   <author>Anders Gidenstam</author>
-  <aircraft-version>2015-07-21</aircraft-version>
+  <aircraft-version>2015-08-11</aircraft-version>
 
   <status type="string">alpha</status>
   <rating>
@@ -23,9 +23,11 @@
 
   <flight-model>jsb</flight-model>
   <aero>MFI-9B</aero>
+  <!-- The higher rate aides stability in the ground/hydrodynamic reactions. -->
+  <model-hz type="double">960.0</model-hz>
 
   <!-- startup>
-   <splash-texture>Aircraft/Short_Empire/splash.png</splash-texture>
+   <splash-texture>Aircraft/MFI-9/splash.png</splash-texture>
   </startup -->
 
   <sound>
@@ -38,6 +40,7 @@
    <livery>
     <file type="string"></file>
    </livery>
+   <floats type="double">0.0</floats>
   </model>
 
   <!-- Aircraft specific help. -->
@@ -171,7 +174,7 @@
    <name type="string">Luggage</name>
    <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[2]"/>
    <min-lb type="double">0.0</min-lb>
-   <max-lb type="double">200.0</max-lb>
+   <max-lb type="double">100.0</max-lb>
   </weight>
  </payload>
 
@@ -202,10 +205,26 @@
      print("Livery support ... initialized!");   
    </script>
   </MFI9>
+  <hydrodynamics>
+   <file>Systems/jsbsim-hydrodynamics.nas</file>
+  </hydrodynamics>
  </nasal>
 
  <input>
   <!-- keyboard include="Systems/keys.xml"/ -->
  </input>
+
+ <!--
+   Force the type and initial value of the aliased JSBSim control properties.
+   JSBSim does not write default values to properties that it finds already
+   exist even though they are of undefined type, as e.g. when created by
+   aliases. Setting the default values here allow them to be overriden from
+   the command line.
+ -->
+ <fdm>
+  <jsbsim>
+   <floats-enabled-norm alias="/sim/model/floats"/>
+  </jsbsim>
+ </fdm>
 
 </PropertyList>

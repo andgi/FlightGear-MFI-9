@@ -97,44 +97,45 @@
   </offsets>
  </model>
 
- <!-- Doors and hatches animations =========================================-->
- <!-- animation> 
-  <type>pick</type>
-  <object-name>astro_hatch</object-name>
-  <action>
-   <button>0</button>
-   <repeatable>false</repeatable>
-   <binding>
-    <command>nasal</command>
-    <script>
-      ShortEmpire.astro_hatch.toggle();
-    </script>
-   </binding>
-  </action>
- </animation>
+ <!-- Landing gear / Floats and other variant animations ===================-->
  <animation>
-  <type>rotate</type>
-  <object-name>astro_hatch</object-name>
-  <property>sim/model/doors/astro-hatch/position-norm</property>
-  <interpolation>
-   <entry>
-    <ind>0.0</ind>
-    <dep>0.0</dep>
-   </entry>
-   <entry>
-    <ind>1.0</ind>
-    <dep>-125.0</dep>
-   </entry>
-  </interpolation>
-  <axis>
-   <x1-m> -3.20 </x1-m>
-   <y1-m> -0.62 </y1-m>
-   <z1-m>  2.46 </z1-m>
-   <x2-m> -2.92 </x2-m>
-   <y2-m> -0.62 </y2-m>
-   <z2-m>  2.41 </z2-m>
-  </axis>
- </animation -->
+  <type>select</type>
+  <object-name>NLG_strut</object-name>
+  <object-name>NLG_damper</object-name>
+  <object-name>NLG_damper_rod</object-name>
+  <object-name>NLG_fork</object-name>
+  <object-name>NLG_hub</object-name>
+  <object-name>tyre</object-name>
+  <object-name>landing_gear.L</object-name>
+  <object-name>MLG_hub.L</object-name>
+  <object-name>tyre.L</object-name>
+  <object-name>landing_gear.R</object-name>
+  <object-name>MLG_hub.R</object-name>
+  <object-name>tyre.R</object-name>
+  <condition>
+   <not>
+    <property>sim/model/floats</property>
+   </not>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>float.L</object-name>
+  <object-name>float.R</object-name>
+  <object-name>float_supports</object-name>
+  <object-name>float_support.1L</object-name>
+  <object-name>float_support.1R</object-name>
+  <object-name>float_support.2L</object-name>
+  <object-name>float_support.2R</object-name>
+  <object-name>float_support.3L</object-name>
+  <object-name>float_support.3R</object-name>
+  <condition>
+   <property>sim/model/floats</property>
+  </condition>
+ </animation>
+
+ <!-- Doors and hatches animations =========================================-->
 
  <!-- Flight control surface animations ====================================-->
 

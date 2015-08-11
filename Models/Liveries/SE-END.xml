@@ -9,12 +9,12 @@
  <sim>
   <model>
    <livery>
-    <name type="string">Blank</name>
-    <index type="int">2</index>
-    <texture n="0" type="string">white.png</texture>
+    <name type="string">SE-END</name>
+    <index type="int">1</index>
+    <texture n="0" type="string">Liveries/SE-END-exterior.png</texture>
     <texture n="1" type="string">Interior/interior.png</texture>
    </livery>
-   <floats type="double">0.0</floats>
+   <floats type="double">1.0</floats>
   </model>
  </sim>
 </PropertyList>

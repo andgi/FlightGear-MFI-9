@@ -30,7 +30,7 @@
   <email>anders at gidenstam dot org</email>
 
   <filecreationdate>2012-12-28</filecreationdate>
-  <version>2015-07-09</version>
+  <version>2015-08-11</version>
 
   <description>Models a MFI-9B.</description>
   <license>
@@ -69,6 +69,16 @@
              author="Bölkow-Apparatebau GMBH"
              title="Flughandbuch Bölkow Bo 208 C Junior"
              date="1966"/>
+
+  <reference refID="FAA:1964:A1EU"
+             author="FAA"
+             title="http://www.airweb.faa.gov/Regulatory_and_Guidance_Library/rgMakeModel.nsf/0/cc7a3ac21a52349b8525673000471e7e/$FILE/A1eu.pdf"
+             date="12 June 1964"/>
+
+  <reference refID="Wagner:1932:POW"
+             author="Herbert Wagner"
+             title="Planing of Watercraft  Translated as NACA-TM-1139"
+             date="1933/1948"/>
 
  </fileheader>
 
@@ -147,7 +157,7 @@
    <description>Pilot in the left seat</description>
    <weight unit="KG">90.0</weight>
    <location name="POINTMASS" unit="M">
-    <x> 1.70</x>
+    <x> 1.80</x>
     <y>-0.30</y>
     <z> 0.20</z>
    </location>
@@ -157,11 +167,11 @@
    <description>Pilot in the right seat</description>
    <weight unit="KG">90.0</weight>
    <location name="POINTMASS" unit="M">
-    <x> 1.70</x>
+    <x> 1.80</x>
     <y> 0.30</y>
     <z> 0.20</z>
    </location>
-  </pointmass> 
+  </pointmass>
 
   <pointmass name="Luggage">
    <description>Luggage behind the seats</description>
@@ -171,12 +181,37 @@
     <y> 0.00</y>
     <z>-0.20</z>
    </location>
-  </pointmass> 
+  </pointmass>
+
+  <pointmass name="Left float">
+   <description>Left float</description>
+   <weight unit="KG">0.0</weight>
+   <location name="POINTMASS" unit="M">
+    <x> 2.11</x>
+    <y>-0.95</y>
+    <z>-0.98</z>
+   </location>
+  </pointmass>
+
+  <pointmass name="Right float">
+   <description>Right float</description>
+   <weight unit="KG">0.0</weight>
+   <location name="POINTMASS" unit="M">
+    <x> 2.11</x>
+    <y>0.95</y>
+    <z>-0.98</z>
+   </location>
+  </pointmass>
 
  </mass_balance>
 
  <ground_reactions>
+  <documentation>
+   The hydrodynamic interactions of the floats are modelled by
+   external forces.
+  </documentation>
 
+  <!-- Landing gear contact points. -->
   <contact type="BOGEY" name="NOSE">
    <location unit="M">
     <x> 0.67</x>
@@ -225,16 +260,124 @@
    <retractable>0</retractable>
   </contact>
 
+  <!-- Float contact points for solid ground. -->
+  <contact type="BOGEY" name="LEFT_FLOAT_NOSE">
+   <location unit="M">
+    <x>-0.154</x>
+    <y>-0.950</y>
+    <z>-1.155</z>
+   </location>
+   <static_friction>0.6</static_friction>
+   <dynamic_friction>0.5</dynamic_friction>
+   <rolling_friction>0.4</rolling_friction>
+   <spring_coeff unit="LBS/FT">7500.0</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">2500.0</damping_coeff>
+   <brake_group>NONE</brake_group>
+  </contact>
+  <contact type="BOGEY" name="LEFT_FLOAT_FORE">
+   <location unit="M">
+    <x>1.137</x>
+    <y>-0.950</y>
+    <z>-1.507</z>
+   </location>
+   <static_friction>0.6</static_friction>
+   <dynamic_friction>0.5</dynamic_friction>
+   <rolling_friction>0.4</rolling_friction>
+   <spring_coeff unit="LBS/FT">7500.0</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">2500.0</damping_coeff>
+   <brake_group>NONE</brake_group>
+  </contact>
+  <contact type="BOGEY" name="LEFT_FLOAT_STEP">
+   <location unit="M">
+    <x>2.138</x>
+    <y>-0.950</y>
+    <z>-1.479</z>
+   </location>
+   <static_friction>0.6</static_friction>
+   <dynamic_friction>0.5</dynamic_friction>
+   <rolling_friction>0.40</rolling_friction>
+   <spring_coeff unit="LBS/FT">7500.0</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">2500.0</damping_coeff>
+   <brake_group>NONE</brake_group>
+  </contact>
+  <contact type="BOGEY" name="LEFT_FLOAT_AFT">
+   <location unit="M">
+    <x>4.174</x>
+    <y>-0.950</y>
+    <z>-1.072</z>
+   </location>
+   <static_friction>0.6</static_friction>
+   <dynamic_friction>0.5</dynamic_friction>
+   <rolling_friction>0.4</rolling_friction>
+   <spring_coeff unit="LBS/FT">7500.0</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">2500.0</damping_coeff>
+   <brake_group>NONE</brake_group>
+  </contact>
+
+  <contact type="BOGEY" name="RIGHT_FLOAT_NOSE">
+   <location unit="M">
+    <x>-0.154</x>
+    <y>0.950</y>
+    <z>-1.155</z>
+   </location>
+   <static_friction>0.6</static_friction>
+   <dynamic_friction>0.5</dynamic_friction>
+   <rolling_friction>0.4</rolling_friction>
+   <spring_coeff unit="LBS/FT">7500.0</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">2500.0</damping_coeff>
+   <brake_group>NONE</brake_group>
+  </contact>
+  <contact type="BOGEY" name="RIGHT_FLOAT_FORE">
+   <location unit="M">
+    <x>1.137</x>
+    <y>0.950</y>
+    <z>-1.507</z>
+   </location>
+   <static_friction>0.6</static_friction>
+   <dynamic_friction>0.5</dynamic_friction>
+   <rolling_friction>0.4</rolling_friction>
+   <spring_coeff unit="LBS/FT">7500.0</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">2500.0</damping_coeff>
+   <brake_group>NONE</brake_group>
+  </contact>
+  <contact type="BOGEY" name="RIGHT_FLOAT_STEP">
+   <location unit="M">
+    <x>2.138</x>
+    <y>0.950</y>
+    <z>-1.479</z>
+   </location>
+   <static_friction>0.6</static_friction>
+   <dynamic_friction>0.5</dynamic_friction>
+   <rolling_friction>0.4</rolling_friction>
+   <spring_coeff unit="LBS/FT">7500.0</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">2500.0</damping_coeff>
+   <brake_group>NONE</brake_group>
+  </contact>
+  <contact type="BOGEY" name="RIGHT_FLOAT_AFT">
+   <location unit="M">
+    <x>4.174</x>
+    <y>0.950</y>
+    <z>-1.072</z>
+   </location>
+   <static_friction>0.6</static_friction>
+   <dynamic_friction>0.5</dynamic_friction>
+   <rolling_friction>0.4</rolling_friction>
+   <spring_coeff unit="LBS/FT">7500.0</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">2500.0</damping_coeff>
+   <brake_group>NONE</brake_group>
+  </contact>
+
+  <!-- Structure contact points. -->
   <contact type="STRUCTURE" name="LEFT_WING">
    <location unit="M">
     <x> 1.71</x>
     <y>-3.71</y>
     <z> 0.47</z>
    </location>
-   <static_friction >1.00</static_friction>
-   <dynamic_friction>1.00</dynamic_friction>
-   <spring_coeff  unit="LBS/FT"    >1267.88</spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">600.00</damping_coeff>
+   <static_friction >0.9</static_friction>
+   <dynamic_friction>0.8</dynamic_friction>
+   <spring_coeff  unit="LBS/FT"    >7500.0</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">2500.0</damping_coeff>
   </contact>
 
   <contact type="STRUCTURE" name="RIGHT_WING">
@@ -243,22 +386,34 @@
     <y> 3.71</y>
     <z> 0.47</z>
    </location>
-   <static_friction >1.00</static_friction>
-   <dynamic_friction>1.00</dynamic_friction>
-   <spring_coeff  unit="LBS/FT"    >1267.88</spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">600.00</damping_coeff>
+   <static_friction >0.9</static_friction>
+   <dynamic_friction>0.8</dynamic_friction>
+   <spring_coeff  unit="LBS/FT"    >7500.0</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">2500.0</damping_coeff>
+  </contact>
+
+  <contact type="STRUCTURE" name="NOSE">
+   <location unit="M">
+    <x> 0.10</x>
+    <y> 0.00</y>
+    <z>-0.08</z>
+   </location>
+   <static_friction >0.9</static_friction>
+   <dynamic_friction>0.8</dynamic_friction>
+   <spring_coeff  unit="LBS/FT"    >7500.0</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">2500.0</damping_coeff>
   </contact>
 
   <contact type="STRUCTURE" name="TAIL">
    <location unit="M">
     <x> 5.40</x>
     <y> 0.00</y>
-    <z>-0.30</z>
+    <z>-0.13</z>
    </location>
-   <static_friction >1.00</static_friction>
-   <dynamic_friction>1.00</dynamic_friction>
-   <spring_coeff  unit="LBS/FT"    >500.00</spring_coeff>
-   <damping_coeff unit="LBS/FT/SEC">300.00</damping_coeff>
+   <static_friction >0.9</static_friction>
+   <dynamic_friction>0.8</dynamic_friction>
+   <spring_coeff  unit="LBS/FT"    >7500.0</spring_coeff>
+   <damping_coeff unit="LBS/FT/SEC">2500.0</damping_coeff>
   </contact>
 
  </ground_reactions>
@@ -506,6 +661,168 @@
   </channel>
 
  </flight_control>
+
+ <external_reactions>
+
+  <documentation>
+   HRP: (2.11, 0.0, -0.98) m
+  </documentation>
+
+  <force name="hydro-X" frame="LOCAL" unit="LBS">
+   <location unit="M">
+    <x>  2.11 </x>
+    <y>  0.00 </y>
+    <z> -0.98 </z>
+   </location>
+   <direction>
+    <x> 1.0 </x>
+    <y> 0.0 </y>
+    <z> 0.0 </z>
+   </direction>
+  </force>
+  <force name="hydro-Y" frame="LOCAL" unit="LBS">
+   <location unit="M">
+    <x>  2.11 </x>
+    <y>  0.00 </y>
+    <z> -0.98 </z>
+   </location>
+   <direction>
+    <x> 0.0 </x>
+    <y> 1.0 </y>
+    <z> 0.0 </z>
+   </direction>
+  </force>
+  <force name="hydro-Z" frame="LOCAL" unit="LBS">
+   <location unit="M">
+    <x>  2.11 </x>
+    <y>  0.00 </y>
+    <z> -0.98 </z>
+   </location>
+   <direction>
+    <x> 0.0 </x>
+    <y> 0.0 </y>
+    <z>-1.0 </z>
+   </direction>
+  </force>
+
+  <force name="hydro-pitch[0]" frame="LOCAL" unit="LBS">
+   <location unit="M">
+    <x>  1.8052 </x>
+    <y>  0.00 </y>
+    <z> -0.98 </z>
+   </location>
+   <direction>
+    <x> 0.0 </x>
+    <y> 0.0 </y>
+    <z>-1.0 </z>
+   </direction>
+  </force>
+  <force name="hydro-pitch[1]" frame="LOCAL" unit="LBS">
+   <location unit="M">
+    <x>  2.4148 </x>
+    <y>  0.00 </y>
+    <z> -0.98 </z>
+   </location>
+   <direction>
+    <x> 0.0 </x>
+    <y> 0.0 </y>
+    <z>-1.0 </z>
+   </direction>
+  </force>
+
+  <force name="hydro-roll[0]" frame="LOCAL" unit="LBS">
+   <location unit="M">
+    <x>  2.11 </x>
+    <y> -0.3048 </y>
+    <z> -0.98 </z>
+   </location>
+   <direction>
+    <x> 0.0 </x>
+    <y> 0.0 </y>
+    <z>-1.0 </z>
+   </direction>
+  </force>
+  <force name="hydro-roll[1]" frame="LOCAL" unit="LBS">
+   <location unit="M">
+    <x>  2.11 </x>
+    <y>  0.3048 </y>
+    <z> -0.98 </z>
+   </location>
+   <direction>
+    <x> 0.0 </x>
+    <y> 0.0 </y>
+    <z>-1.0 </z>
+   </direction>
+  </force>
+
+  <force name="hydro-yaw[0]" frame="BODY" unit="LBS">
+   <location unit="M">
+    <x>  2.11 </x>
+    <y> -0.3048 </y>
+    <z> -0.98 </z>
+   </location>
+   <direction>
+    <x> 1.0 </x>
+    <y> 0.0 </y>
+    <z> 0.0 </z>
+   </direction>
+  </force>
+  <force name="hydro-yaw[1]" frame="BODY" unit="LBS">
+   <location unit="M">
+    <x>  2.11 </x>
+    <y>  0.3048 </y>
+    <z> -0.98 </z>
+   </location>
+   <direction>
+    <x> 1.0 </x>
+    <y> 0.0 </y>
+    <z> 0.0 </z>
+   </direction>
+  </force>
+
+ </external_reactions>
+
+ <system file="hydrodynamics"/>
+ <system file="hydrodynamic-planing-floats">
+  <!-- Parameters defining the planing surfaces of the floats. -->
+  <!-- NOTE: Coordinates in the frame with
+             origin at hydro RP and x/y/z = aft/right/up
+  -->
+  <property value="7.81">hydro/planing-floats/forebody-length-ft[0]</property>
+  <property value="1.91">hydro/planing-floats/forebody-beam-ft[0]</property>
+  <property value="-3.12">hydro/planing-floats/forebody-keel-y-ft[0]</property>
+  <property value="-1.64">hydro/planing-floats/forebody-keel-z-ft[0]</property>
+  <property value="0.00">hydro/planing-floats/forebody-end-x-ft[0]</property>
+  <property value="7.09">hydro/planing-floats/afterbody-length-ft[0]</property>
+  <property value="1.81">hydro/planing-floats/afterbody-beam-ft[0]</property>
+  <property value="-3.12">hydro/planing-floats/afterbody-keel-y-ft[0]</property>
+  <property value="-0.82">hydro/planing-floats/afterbody-keel-z-ft[0]</property>
+  <property value="7.09">hydro/planing-floats/afterbody-end-x-ft[0]</property>
+
+  <property value="0.50">hydro/planing-floats/forebody-normal-force-factor[0]</property>
+  <property value="0.40">hydro/planing-floats/afterbody-normal-force-factor[0]</property>
+  <property value="0.0005">hydro/planing-floats/forebody-skin-friction-coefficient[0]</property>
+  <property value="0.0005">hydro/planing-floats/afterbody-skin-friction-coefficient[0]</property>
+
+  <property value="7.81">hydro/planing-floats/forebody-length-ft[1]</property>
+  <property value="1.91">hydro/planing-floats/forebody-beam-ft[1]</property>
+  <property value="3.12">hydro/planing-floats/forebody-keel-y-ft[1]</property>
+  <property value="-1.64">hydro/planing-floats/forebody-keel-z-ft[1]</property>
+  <property value="0.00">hydro/planing-floats/forebody-end-x-ft[1]</property>
+  <property value="7.09">hydro/planing-floats/afterbody-length-ft[1]</property>
+  <property value="1.81">hydro/planing-floats/afterbody-beam-ft[1]</property>
+  <property value="3.12">hydro/planing-floats/afterbody-keel-y-ft[1]</property>
+  <property value="-0.82">hydro/planing-floats/afterbody-keel-z-ft[1]</property>
+  <property value="7.09">hydro/planing-floats/afterbody-end-x-ft[1]</property>
+
+  <property value="0.50">hydro/planing-floats/forebody-normal-force-factor[1]</property>
+  <property value="0.40">hydro/planing-floats/afterbody-normal-force-factor[1]</property>
+  <property value="0.0005">hydro/planing-floats/forebody-skin-friction-coefficient[1]</property>
+  <property value="0.0005">hydro/planing-floats/afterbody-skin-friction-coefficient[1]</property>
+
+ </system>
+ <system file="MFI-9-hydrodynamics"/>
+ <system file="MFI-9-ground_reactions"/>
 
  <!-- aerodynamics file="Systems/aeromatic_aero.xml"/ -->
  <aerodynamics file="Systems/datcom_aero.xml"/>
