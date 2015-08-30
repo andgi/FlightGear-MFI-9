@@ -30,9 +30,9 @@
   <email>anders at gidenstam dot org</email>
 
   <filecreationdate>2012-12-28</filecreationdate>
-  <version>2015-08-11</version>
+  <version>2015-08-30</version>
 
-  <description>Models a MFI-9B.</description>
+  <description>Models a MFI-9B aircraft.</description>
   <license>
    <licenseName>GPL</licenseName>
    <licenseURL>http://www.gnu.org/licenses/gpl.html</licenseURL>
@@ -212,7 +212,7 @@
   </documentation>
 
   <!-- Landing gear contact points. -->
-  <contact type="BOGEY" name="NOSE">
+  <contact type="BOGEY" name="NOSE_GEAR">
    <location unit="M">
     <x> 0.67</x>
     <y> 0.00</y>
@@ -228,7 +228,7 @@
    <retractable>0</retractable>
   </contact>
 
-  <contact type="BOGEY" name="LEFT_MAIN">
+  <contact type="BOGEY" name="LEFT_MAIN_GEAR">
    <location unit="M">
     <x> 2.05</x>
     <y>-1.00</y>
@@ -244,7 +244,7 @@
    <retractable>0</retractable>
   </contact>
 
-  <contact type="BOGEY" name="RIGHT_MAIN">
+  <contact type="BOGEY" name="RIGHT_MAIN_GEAR">
    <location unit="M">
     <x> 2.05</x>
     <y> 1.00</y>
@@ -392,7 +392,8 @@
    <damping_coeff unit="LBS/FT/SEC">2500.0</damping_coeff>
   </contact>
 
-  <contact type="STRUCTURE" name="NOSE">
+  <contact type="BOGEY" name="NOSE">
+   <!-- Of BOGEY type to sink in water. -->
    <location unit="M">
     <x> 0.10</x>
     <y> 0.00</y>
@@ -400,6 +401,7 @@
    </location>
    <static_friction >0.9</static_friction>
    <dynamic_friction>0.8</dynamic_friction>
+   <rolling_friction>0.8</rolling_friction>
    <spring_coeff  unit="LBS/FT"    >7500.0</spring_coeff>
    <damping_coeff unit="LBS/FT/SEC">2500.0</damping_coeff>
   </contact>
@@ -799,10 +801,10 @@
   <property value="-0.82">hydro/planing-floats/afterbody-keel-z-ft[0]</property>
   <property value="7.09">hydro/planing-floats/afterbody-end-x-ft[0]</property>
 
-  <property value="0.50">hydro/planing-floats/forebody-normal-force-factor[0]</property>
-  <property value="0.40">hydro/planing-floats/afterbody-normal-force-factor[0]</property>
-  <property value="0.0005">hydro/planing-floats/forebody-skin-friction-coefficient[0]</property>
-  <property value="0.0005">hydro/planing-floats/afterbody-skin-friction-coefficient[0]</property>
+  <property value="0.40">hydro/planing-floats/forebody-normal-force-factor[0]</property>
+  <property value="0.30">hydro/planing-floats/afterbody-normal-force-factor[0]</property>
+  <property value="0.0010">hydro/planing-floats/forebody-skin-friction-coefficient[0]</property>
+  <property value="0.0010">hydro/planing-floats/afterbody-skin-friction-coefficient[0]</property>
 
   <property value="7.81">hydro/planing-floats/forebody-length-ft[1]</property>
   <property value="1.91">hydro/planing-floats/forebody-beam-ft[1]</property>
@@ -815,10 +817,10 @@
   <property value="-0.82">hydro/planing-floats/afterbody-keel-z-ft[1]</property>
   <property value="7.09">hydro/planing-floats/afterbody-end-x-ft[1]</property>
 
-  <property value="0.50">hydro/planing-floats/forebody-normal-force-factor[1]</property>
-  <property value="0.40">hydro/planing-floats/afterbody-normal-force-factor[1]</property>
-  <property value="0.0005">hydro/planing-floats/forebody-skin-friction-coefficient[1]</property>
-  <property value="0.0005">hydro/planing-floats/afterbody-skin-friction-coefficient[1]</property>
+  <property value="0.40">hydro/planing-floats/forebody-normal-force-factor[1]</property>
+  <property value="0.30">hydro/planing-floats/afterbody-normal-force-factor[1]</property>
+  <property value="0.0010">hydro/planing-floats/forebody-skin-friction-coefficient[1]</property>
+  <property value="0.0010">hydro/planing-floats/afterbody-skin-friction-coefficient[1]</property>
 
  </system>
  <system file="MFI-9-hydrodynamics"/>

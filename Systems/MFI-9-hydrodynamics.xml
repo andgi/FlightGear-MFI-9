@@ -322,6 +322,7 @@
     <sum>
      <property>hydro/height-agl-ft</property>
      <product>
+      <value>0.083333333</value>
       <property>hydro/float-rp-arm-y-in[0]</property>
       <sin><property>attitude/phi-rad</property></sin>
      </product>
@@ -364,6 +365,7 @@
     <sum>
      <property>hydro/height-agl-ft</property>
      <product>
+      <value>0.083333333</value>
       <property>hydro/float-rp-arm-y-in[1]</property>
       <sin><property>attitude/phi-rad</property></sin>
      </product>
@@ -573,6 +575,10 @@
        <value>10.0</value>
        <abs><sin><property>hydro/beta-rad</property></sin></abs>
       </product>
+      <product>  <!-- Increase drag with pitch (theta). -->
+       <value>5.0</value>
+       <abs><sin><property>hydro/floats/pitch-rad[0]</property></sin></abs>
+      </product>
      </sum>
     </product>
    </function>
@@ -593,6 +599,10 @@
       <product>  <!-- Increase drag with beta. -->
        <value>10.0</value>
        <abs><sin><property>hydro/beta-rad</property></sin></abs>
+      </product>
+      <product>  <!-- Increase drag with pitch (theta). -->
+       <value>5.0</value>
+       <abs><sin><property>hydro/floats/pitch-rad[1]</property></sin></abs>
       </product>
      </sum>
     </product>
@@ -787,7 +797,7 @@
    <function>
     <product>
      <value>1.0</value>
-     <value>125.0</value> <!-- Guess -->
+     <value>60.0</value> <!-- Guess -->
      <property>velocities/v-down-fps</property>
     </product>
    </function>
@@ -920,6 +930,7 @@
       <independentVar lookup="column">hydro/floats/height-agl-ft[0]</independentVar>
       <tableData>
       0.0       0.5       1.0        1.5        2.0         2.5         3.0
+-90   0.0       0.0       0.0        0.0        0.0         0.0         0
 -8   26.7265   34.9225   29.6528     9.27945    0.0122147   0.0652619   0
 -4   21.6465   32.7407   16.0718     1.31901    0.0503481   0.0551588   0
 -2   18.4823   25.8278    9.59367    0.231049   0.0451462   0.0523531   0
@@ -929,6 +940,7 @@
 8     1.29398 -13.1113  -12.3042    -0.134528   0.00433407  0.000415467 0
 12   -4.20037 -15.0343  -16.3955    -7.74351   -0.0425143  -0.00589553  0
 16   -8.36804 -15.7599  -17.8391   -14.0865    -5.33393    -0.0484868   0
+90    0.0       0.0       0.0        0.0        0.0         0.0         0
       </tableData>
      </table>
     </product>
@@ -950,6 +962,7 @@
       <independentVar lookup="column">hydro/floats/height-agl-ft[1]</independentVar>
       <tableData>
       0.0       0.5       1.0        1.5        2.0         2.5         3.0
+-90   0.0       0.0       0.0        0.0        0.0         0.0         0
 -8   26.7265   34.9225   29.6528     9.27945    0.0122147   0.0652619   0
 -4   21.6465   32.7407   16.0718     1.31901    0.0503481   0.0551588   0
 -2   18.4823   25.8278    9.59367    0.231049   0.0451462   0.0523531   0
@@ -959,6 +972,7 @@
 8     1.29398 -13.1113  -12.3042    -0.134528   0.00433407  0.000415467 0
 12   -4.20037 -15.0343  -16.3955    -7.74351   -0.0425143  -0.00589553  0
 16   -8.36804 -15.7599  -17.8391   -14.0865    -5.33393    -0.0484868   0
+90    0.0       0.0       0.0        0.0        0.0         0.0         0
       </tableData>
      </table>
     </product>
@@ -992,7 +1006,7 @@
    <function>
     <product>
      <value>1.0</value>
-     <value>-12000.0</value> <!-- Guess -->
+     <value>-6000.0</value> <!-- Guess -->
      <property>velocities/thetadot-rad_sec</property>
     </product>
    </function>
