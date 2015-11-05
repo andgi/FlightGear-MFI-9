@@ -612,29 +612,27 @@
   <fcs_function name="hydro/planing-drag-lbs[0]">
    <function>
     <description>Drag due to planing. FIXME: for Body-X axis.</description>
-    <product>
-     <value>-1.0</value>
+    <abs>
      <sum>
       <property>hydro/planing-floats/forebody-induced-fbx-force-lbs[0]</property>
       <property>hydro/planing-floats/afterbody-induced-fbx-force-lbs[0]</property>
       <property>hydro/planing-floats/forebody-friction-fbx-force-lbs[0]</property>
       <property>hydro/planing-floats/afterbody-friction-fbx-force-lbs[0]</property>
      </sum>
-    </product>
+    </abs>
    </function>
   </fcs_function>
   <fcs_function name="hydro/planing-drag-lbs[1]">
    <function>
     <description>Drag due to planing. FIXME: for Body-X axis.</description>
-    <product>
-     <value>-1.0</value>
+    <abs>
      <sum>
       <property>hydro/planing-floats/forebody-induced-fbx-force-lbs[1]</property>
       <property>hydro/planing-floats/afterbody-induced-fbx-force-lbs[1]</property>
       <property>hydro/planing-floats/forebody-friction-fbx-force-lbs[1]</property>
       <property>hydro/planing-floats/afterbody-friction-fbx-force-lbs[1]</property>
      </sum>
-    </product>
+    </abs>
    </function>
   </fcs_function>
 
