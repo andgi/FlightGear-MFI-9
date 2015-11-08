@@ -17,10 +17,11 @@
  </effect-->
 
  <!-- Rembrandt transparency markup. -->
- <!-- effect>
-  <inherits-from>Effects/model-transparent</inherits-from>
-  <object-name>windscreen</object-name>
- </effect -->
+ <effect>
+  <inherits-from>Models/Effects/transparent-canopy-outside</inherits-from>
+  <object-name>canopy.glass</object-name>
+  <object-name>rear_canopy.glass</object-name>
+ </effect>
 
  <!-- Livery selection =====================================================-->
  <animation>
@@ -497,6 +498,112 @@
    <z>0.0</z>
   </axis>
  </animation>
+
+ <!-- Wake particle effects ================================================-->
+ <model>
+  <name>Left float 1</name>
+  <overlay>
+   <particlesystem>
+    <condition>
+     <and>
+      <greater-than>
+       <property>fdm/jsbsim/hydro/planing-drag-lbs[0]</property>
+       <value>1.0</value>
+      </greater-than>
+     </and>
+    </condition>
+    <shooter>
+     <phi-min-deg>90.0</phi-min-deg>
+     <phi-max-deg>90.0</phi-max-deg>
+    </shooter>
+   </particlesystem>
+  </overlay>
+  <path>Aircraft/MFI-9B/Models/Effects/wake.xml</path>
+  <offsets>
+   <!-- x/y/z == back/right/up -->
+   <x-m>  1.60 </x-m>
+   <y-m> -0.95 </y-m>
+   <z-m> -1.50 </z-m>
+  </offsets>
+ </model>
+ <model>
+  <name>Left float 2</name>
+  <overlay>
+   <particlesystem>
+    <condition>
+     <and>
+      <greater-than>
+       <property>fdm/jsbsim/hydro/planing-drag-lbs[0]</property>
+       <value>1.0</value>
+      </greater-than>
+     </and>
+    </condition>
+    <shooter>
+     <phi-min-deg>-90.0</phi-min-deg>
+     <phi-max-deg>-90.0</phi-max-deg>
+    </shooter>
+   </particlesystem>
+  </overlay>
+  <path>Aircraft/MFI-9B/Models/Effects/wake.xml</path>
+  <offsets>
+   <!-- x/y/z == back/right/up -->
+   <x-m>  1.60 </x-m>
+   <y-m> -0.95 </y-m>
+   <z-m> -1.50 </z-m>
+  </offsets>
+ </model>
+  <model>
+  <name>Right float 1</name>
+  <overlay>
+   <particlesystem>
+    <condition>
+     <and>
+      <greater-than>
+       <property>fdm/jsbsim/hydro/planing-drag-lbs[1]</property>
+       <value>1.0</value>
+      </greater-than>
+     </and>
+    </condition>
+    <shooter>
+     <phi-min-deg>90.0</phi-min-deg>
+     <phi-max-deg>90.0</phi-max-deg>
+    </shooter>
+   </particlesystem>
+  </overlay>
+  <path>Aircraft/MFI-9B/Models/Effects/wake.xml</path>
+  <offsets>
+   <!-- x/y/z == back/right/up -->
+   <x-m>  1.60 </x-m>
+   <y-m>  0.95 </y-m>
+   <z-m> -1.50 </z-m>
+  </offsets>
+ </model>
+ <model>
+  <name>Right float 2</name>
+  <overlay>
+   <particlesystem>
+    <condition>
+     <and>
+      <greater-than>
+       <property>fdm/jsbsim/hydro/planing-drag-lbs[1]</property>
+       <value>1.0</value>
+      </greater-than>
+     </and>
+    </condition>
+    <shooter>
+     <phi-min-deg>-90.0</phi-min-deg>
+     <phi-max-deg>-90.0</phi-max-deg>
+    </shooter>
+   </particlesystem>
+  </overlay>
+  <path>Aircraft/MFI-9B/Models/Effects/wake.xml</path>
+  <offsets>
+   <!-- x/y/z == back/right/up -->
+   <x-m>  1.60 </x-m>
+   <y-m>  0.95 </y-m>
+   <z-m> -1.50 </z-m>
+  </offsets>
+ </model>
 
  <!-- LOD for the model as a whole =========================================-->
  <animation>

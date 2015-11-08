@@ -11,7 +11,7 @@
 
   <description>MFI-9B aircraft.</description>
   <author>Anders Gidenstam</author>
-  <aircraft-version>2015-08-30</aircraft-version>
+  <aircraft-version>2015-11-08</aircraft-version>
 
   <status type="string">alpha</status>
   <rating>
