@@ -145,11 +145,32 @@
     <max>
      <value>0.0</value>
      <min>
-      <difference>
-       <property>hydro/planing-floats/forebody-end-x-ft[0]</property>
-       <property>hydro/planing-floats/forebody-entry-point-x-ft[0]</property>
-      </difference>
       <property>hydro/planing-floats/forebody-length-ft[0]</property>
+      <sum>
+       <product>
+        <ge>
+         <property>hydro/floats/pitch-rad[0]</property>
+         <value>0.0</value>
+        </ge>
+        <difference>
+         <property>hydro/planing-floats/forebody-end-x-ft[0]</property>
+         <property>hydro/planing-floats/forebody-entry-point-x-ft[0]</property>
+        </difference>
+       </product>
+       <product>
+        <lt>
+         <property>hydro/floats/pitch-rad[0]</property>
+         <value>0.0</value>
+        </lt>
+        <difference>
+         <property>hydro/planing-floats/forebody-entry-point-x-ft[0]</property>
+         <difference>
+          <property>hydro/planing-floats/forebody-end-x-ft[0]</property>
+          <property>hydro/planing-floats/forebody-length-ft[0]</property>
+         </difference>
+        </difference>
+       </product>
+      </sum>
      </min>
     </max>
    </function>
@@ -160,11 +181,32 @@
     <max>
      <value>0.0</value>
      <min>
-      <difference>
-       <property>hydro/planing-floats/afterbody-end-x-ft[0]</property>
-       <property>hydro/planing-floats/afterbody-entry-point-x-ft[0]</property>
-      </difference>
       <property>hydro/planing-floats/afterbody-length-ft[0]</property>
+      <sum>
+       <product>
+        <ge>
+         <property>hydro/floats/pitch-rad[0]</property>
+         <value>0.0</value>
+        </ge>
+        <difference>
+         <property>hydro/planing-floats/afterbody-end-x-ft[0]</property>
+         <property>hydro/planing-floats/afterbody-entry-point-x-ft[0]</property>
+        </difference>
+       </product>
+       <product>
+        <lt>
+         <property>hydro/floats/pitch-rad[0]</property>
+         <value>0.0</value>
+        </lt>
+        <difference>
+         <property>hydro/planing-floats/afterbody-entry-point-x-ft[0]</property>
+         <difference>
+          <property>hydro/planing-floats/afterbody-end-x-ft[0]</property>
+          <property>hydro/planing-floats/afterbody-length-ft[0]</property>
+         </difference>
+        </difference>
+       </product>
+      </sum>
      </min>
     </max>
    </function>
@@ -176,11 +218,32 @@
     <max>
      <value>0.0</value>
      <min>
-      <difference>
-       <property>hydro/planing-floats/forebody-end-x-ft[1]</property>
-       <property>hydro/planing-floats/forebody-entry-point-x-ft[1]</property>
-      </difference>
       <property>hydro/planing-floats/forebody-length-ft[1]</property>
+      <sum>
+       <product>
+        <ge>
+         <property>hydro/floats/pitch-rad[1]</property>
+         <value>0.0</value>
+        </ge>
+        <difference>
+         <property>hydro/planing-floats/forebody-end-x-ft[1]</property>
+         <property>hydro/planing-floats/forebody-entry-point-x-ft[1]</property>
+        </difference>
+       </product>
+       <product>
+        <lt>
+         <property>hydro/floats/pitch-rad[1]</property>
+         <value>0.0</value>
+        </lt>
+        <difference>
+         <property>hydro/planing-floats/forebody-entry-point-x-ft[1]</property>
+         <difference>
+          <property>hydro/planing-floats/forebody-end-x-ft[1]</property>
+          <property>hydro/planing-floats/forebody-length-ft[1]</property>
+         </difference>
+        </difference>
+       </product>
+      </sum>
      </min>
     </max>
    </function>
@@ -191,11 +254,32 @@
     <max>
      <value>0.0</value>
      <min>
-      <difference>
-       <property>hydro/planing-floats/afterbody-end-x-ft[1]</property>
-       <property>hydro/planing-floats/afterbody-entry-point-x-ft[1]</property>
-      </difference>
       <property>hydro/planing-floats/afterbody-length-ft[1]</property>
+      <sum>
+       <product>
+        <ge>
+         <property>hydro/floats/pitch-rad[1]</property>
+         <value>0.0</value>
+        </ge>
+        <difference>
+         <property>hydro/planing-floats/afterbody-end-x-ft[1]</property>
+         <property>hydro/planing-floats/afterbody-entry-point-x-ft[1]</property>
+        </difference>
+       </product>
+       <product>
+        <lt>
+         <property>hydro/floats/pitch-rad[1]</property>
+         <value>0.0</value>
+        </lt>
+        <difference>
+         <property>hydro/planing-floats/afterbody-entry-point-x-ft[1]</property>
+         <difference>
+          <property>hydro/planing-floats/afterbody-end-x-ft[1]</property>
+          <property>hydro/planing-floats/afterbody-length-ft[1]</property>
+         </difference>
+        </difference>
+       </product>
+      </sum>
      </min>
     </max>
    </function>
