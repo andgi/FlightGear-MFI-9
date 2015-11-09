@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!--
+  MFI-9B aircraft for FlightGear.
+
+  Copyright (C) 2015  Anders Gidenstam  (anders(at)gidenstam.org)
+  This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+
+ <parameters>
+  <engine-rpm>engines/engine[0]/rpm</engine-rpm>
+ </parameters>
+
+ <!--
+  The propeller model and its animations are based on the FlightGear c172p.
+ -->
+ <path>propeller.ac</path>
+ <!-- x/y/z == aft/right/up. -->
+
+ <!-- Rembrandt transparency markup. -->
+ <effect>
+  <inherits-from>Effects/model-transparent</inherits-from>
+  <object-name>propeller.fast</object-name>
+ </effect>
+
+ <!-- Livery selection =====================================================-->
+ <animation>
+  <type>material</type>
+  <object-name>propeller</object-name>
+  <property-base>sim/model/livery</property-base>
+  <texture-prop>texture</texture-prop>
+  <texture>white.png</texture>
+ </animation>
+
+ <!-- Propeller animation ==================================================-->
+ <animation>
+  <type>spin</type>
+  <object-name>propeller</object-name>
+  <object-name>propeller.fast</object-name>
+  <property alias="/parameters/engine-rpm"/>
+  <factor>1.0</factor>
+  <center>
+   <x-m> 0.0 </x-m>
+   <y-m> 0.0 </y-m>
+   <z-m> 0.0 </z-m>
+  </center>
+  <axis>
+   <x> 1.0 </x>
+   <y> 0.0 </y>
+   <z> 0.0 </z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>propeller</object-name>
+  <condition>
+   <less-than>
+     <property alias="/parameters/engine-rpm"/>
+     <value>500</value>
+   </less-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>select</type>
+  <object-name>propeller.fast</object-name>
+  <condition>
+   <greater-than>
+    <property alias="/parameters/engine-rpm"/>
+    <value>400</value>
+   </greater-than>
+  </condition>
+ </animation>
+
+ <animation>
+  <type>blend</type>
+  <object-name>propeller.fast</object-name>
+  <property alias="/parameters/engine/rpm"/>
+  <factor>0.0004</factor>
+  <max>1.0</max>
+  <min>0.5</min>
+ </animation>
+
+</PropertyList>

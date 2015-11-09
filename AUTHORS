@@ -11,6 +11,9 @@ Ron Jensen
 The model borrows content from the following authors' contributions
 to FlightGear:
 
+David Megginson et al.
+  - Propeller 3d model. (From c172p)
+
 Dependencies (i.e. install these aircraft):
 
 Aircraft/ZLT-NT         (Models/Lights/{Green,Red,White}Light.xml)

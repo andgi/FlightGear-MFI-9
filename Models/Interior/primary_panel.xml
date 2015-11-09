@@ -14,7 +14,7 @@
  <!-- Preliminary primary instruments. Top-bottom, left-right  -->
  <model>
   <name>Magnetic Compass</name>
-  <path>fgdata/Aircraft/c172p/Models/Interior/Panel/Instruments/mag-compass/mag-compass.xml</path>
+  <path>Aircraft/c172p/Models/Interior/Panel/Instruments/mag-compass/mag-compass.xml</path>
   <offsets>
    <x-m>0.000</x-m>
    <y-m>0.000</y-m>

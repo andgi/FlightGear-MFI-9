@@ -60,6 +60,17 @@
   <texture>white.png</texture>
  </animation>
 
+ <!-- Propeller ============================================================-->
+ <model>
+  <name>Propeller</name>
+  <path>Aircraft/MFI-9/Models/propeller.xml</path>
+  <offsets>
+   <!-- x/y/z == back/right/up -->
+   <z-m>-0.021</z-m>
+   <pitch-deg>-4.00</pitch-deg>
+  </offsets>
+ </model>
+
  <!-- Interior =============================================================-->
  <model>
   <name>Interior</name>
