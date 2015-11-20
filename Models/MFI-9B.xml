@@ -518,6 +518,10 @@
     <condition>
      <and>
       <greater-than>
+       <property>fdm/jsbsim/hydro/active-norm</property>
+       <value>0.0</value>
+      </greater-than>
+      <greater-than>
        <property>fdm/jsbsim/hydro/planing-drag-lbs[0]</property>
        <value>1.0</value>
       </greater-than>
@@ -529,7 +533,7 @@
     </shooter>
    </particlesystem>
   </overlay>
-  <path>Aircraft/MFI-9B/Models/Effects/wake.xml</path>
+  <path>Aircraft/MFI-9/Models/Effects/wake.xml</path>
   <offsets>
    <!-- x/y/z == back/right/up -->
    <x-m>  1.60 </x-m>
@@ -544,6 +548,10 @@
     <condition>
      <and>
       <greater-than>
+       <property>fdm/jsbsim/hydro/active-norm</property>
+       <value>0.0</value>
+      </greater-than>
+      <greater-than>
        <property>fdm/jsbsim/hydro/planing-drag-lbs[0]</property>
        <value>1.0</value>
       </greater-than>
@@ -555,7 +563,7 @@
     </shooter>
    </particlesystem>
   </overlay>
-  <path>Aircraft/MFI-9B/Models/Effects/wake.xml</path>
+  <path>Aircraft/MFI-9/Models/Effects/wake.xml</path>
   <offsets>
    <!-- x/y/z == back/right/up -->
    <x-m>  1.60 </x-m>
@@ -570,6 +578,10 @@
     <condition>
      <and>
       <greater-than>
+       <property>fdm/jsbsim/hydro/active-norm</property>
+       <value>0.0</value>
+      </greater-than>
+      <greater-than>
        <property>fdm/jsbsim/hydro/planing-drag-lbs[1]</property>
        <value>1.0</value>
       </greater-than>
@@ -581,7 +593,7 @@
     </shooter>
    </particlesystem>
   </overlay>
-  <path>Aircraft/MFI-9B/Models/Effects/wake.xml</path>
+  <path>Aircraft/MFI-9/Models/Effects/wake.xml</path>
   <offsets>
    <!-- x/y/z == back/right/up -->
    <x-m>  1.60 </x-m>
@@ -596,6 +608,10 @@
     <condition>
      <and>
       <greater-than>
+       <property>fdm/jsbsim/hydro/active-norm</property>
+       <value>0.0</value>
+      </greater-than>
+      <greater-than>
        <property>fdm/jsbsim/hydro/planing-drag-lbs[1]</property>
        <value>1.0</value>
       </greater-than>
@@ -607,7 +623,7 @@
     </shooter>
    </particlesystem>
   </overlay>
-  <path>Aircraft/MFI-9B/Models/Effects/wake.xml</path>
+  <path>Aircraft/MFI-9/Models/Effects/wake.xml</path>
   <offsets>
    <!-- x/y/z == back/right/up -->
    <x-m>  1.60 </x-m>
