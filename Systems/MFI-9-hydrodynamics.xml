@@ -3,7 +3,7 @@
 
   MFI-9 on floats hydrodynamics model for JSBSim.
 
-    Copyright (C) 2015  Anders Gidenstam  (anders(at)gidenstam.org)
+    Copyright (C) 2015 - 2016  Anders Gidenstam  (anders(at)gidenstam.org)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -568,7 +568,7 @@
      <property>hydro/qbar-psf</property>
      <property>hydro/float-beam-ft2</property>
      <property>hydro/drag-tweak-factor</property>
-     <property>hydro/buoyancy-lbs</property>
+     <property>hydro/buoyancy-lbs[0]</property>
      <sum>
       <value>1.0</value>
       <product>  <!-- Increase drag with beta. -->
@@ -593,7 +593,7 @@
      <property>hydro/qbar-psf</property>
      <property>hydro/float-beam-ft2</property>
      <property>hydro/drag-tweak-factor</property>
-     <property>hydro/buoyancy-lbs</property>
+     <property>hydro/buoyancy-lbs[1]</property>
      <sum>
       <value>1.0</value>
       <product>  <!-- Increase drag with beta. -->

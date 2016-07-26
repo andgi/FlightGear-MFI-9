@@ -65,7 +65,7 @@ Gerris Flow Solver, http://gfs.sourceforge.net/wiki/index.php/Main_Page
    Example:
       % ./summarize_experiment.sh 20150529/p4ft
 
-      See Systems/c172p-hydrodynamics.xml to see where the tables for buoyancy
+      See Systems/MFI-9-hydrodynamics.xml to see where the tables for buoyancy
       lift force and pitch and roll moment "coefficients" go and how the
       "coefficients" are transformed back into forces and moments.
-      (Search for 'breakPoint="4.0"'.)
+      (Search for 'Gerris'.)
