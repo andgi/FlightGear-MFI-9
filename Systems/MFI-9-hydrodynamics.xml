@@ -66,7 +66,7 @@
 
  <documentation>
   The extreme float beam is used as the reference length and to define both
-  reference area and volume.
+  reference area and volume for the hydrodynamic coefficients.
  </documentation>
  <property value="1.91">hydro/float-beam-ft</property>
  <property value="3.64">hydro/float-beam-ft2</property>
@@ -170,7 +170,7 @@
       <property>hydro/vbx-fps</property>
      </product>
      <pow>
-      <property>hydro/hull-length-ft</property>
+      <property>metrics/hydro-length-ft</property>
       <value>0.5</value>
      </pow>
     </quotient>
@@ -184,7 +184,7 @@
      <pow>
       <product>
        <property>hydro/environment/gravity-ft_sec2</property>
-       <property>hydro/hull-length-ft</property>
+       <property>metrics/hydro-length-ft</property>
       </product>
       <value>0.5</value>
      </pow>
@@ -262,13 +262,13 @@
        <quotient>
         <product>
          <value>6.2831853</value>
-         <property>hydro/hull-length-ft</property>
+         <property>metrics/hydro-length-ft</property>
         </product>
         <property>hydro/transverse-wave/wave-length-ft</property>
        </quotient>
       </sin>
      </product>
-     <property>hydro/hull-length-ft</property>
+     <property>metrics/hydro-length-ft</property>
     </quotient>
    </function>
   </fcs_function>
@@ -298,14 +298,14 @@
          <quotient>
           <product>
            <value>6.2831853</value>
-           <property>hydro/hull-length-ft</property>
+           <property>metrics/hydro-length-ft</property>
           </product>
           <property>hydro/transverse-wave/wave-length-ft</property>
          </quotient>
         </sin>
        </product>
       </difference>
-      <property>hydro/hull-length-ft</property>
+      <property>metrics/hydro-length-ft</property>
      </atan2>
     </product>
    </function>
