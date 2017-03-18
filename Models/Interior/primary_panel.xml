@@ -2,7 +2,7 @@
 <!--
   MFI-9B aircraft for FlightGear.
 
-  Copyright (C) 2013 - 2015  Anders Gidenstam  (anders(at)gidenstam.org)
+  Copyright (C) 2013 - 2017  Anders Gidenstam  (anders(at)gidenstam.org)
   This file is licensed under the GPL license version 2 or later.
 -->
 <PropertyList>
@@ -30,6 +30,11 @@
    <y-m>-0.110</y-m>
    <z-m> 0.155</z-m>
   </offsets>
+  <overlay>
+   <animation n="1">
+    <property n="0">instrumentation/airspeed-indicator/indicated-speed-kt</property>
+   </animation>
+  </overlay>
  </model>
  <model>
   <name>Attitude Indicator</name>
