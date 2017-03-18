@@ -1,8 +1,8 @@
 #!/bin/bash
-# Copyright (C) 2012 - 2015  Anders Gidenstam  (anders(at)gidenstam.org)
+# Copyright (C) 2012 - 2017  Anders Gidenstam  (anders(at)gidenstam.org)
 # This file is licensed under the GPL license version 2 or later.
 #
-# Usage: summarize_experiment.sh <base dir>/<name base>
+# Usage: summarize_experiment.sh <base dir>
 
 
 BASE=$1
@@ -16,12 +16,13 @@ BASE=$1
 #  and expressed as
 #    F/(Rho*G) and M/(Rho*G)
 
-echo "Z Force (pitch, roll)"
-echo "   0.0"
-for pitch in -8 -4 -2 0 2 4 8 12 16; do
-  ROW=${pitch}
-  for roll in 0; do
-    dir=${BASE}_r${roll}_p${pitch}
+echo "Z Force (hagl, pitch)"
+echo "   -8.0   -4.0   -2.0   0.0   2.0   4.0   8.0   12.0   16.0"
+for hagl in 0 0.5 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.5; do
+  ROW=${hagl}
+  for pitch in -8 -4 -2 0 2 4 8 12 16; do
+    roll=0
+    dir=${BASE}/p${hagl}ft_r${roll}_p${pitch}
     ROW=${ROW}`awk 'BEGIN {
             U = 8.0*3.2808399; Rho = 1.0; G = 1.0;
             k_F = U^3 * Rho * G;
@@ -32,12 +33,13 @@ for pitch in -8 -4 -2 0 2 4 8 12 16; do
 done;
 echo;
 
-echo "Y Moment (pitch, roll) (~pitch moment)"
-echo "   0.0"
-for pitch in -8 -4 -2 0 2 4 8 12 16; do
-  ROW=${pitch}
-  for roll in 0; do
-    dir=${BASE}_r${roll}_p${pitch}
+echo "Y Moment (hagl, pitch) (~pitch moment)"
+echo "   -8.0   -4.0   -2.0   0.0   2.0   4.0   8.0   12.0   16.0"
+for hagl in 0 0.5 1.0 1.1 1.2 1.3 1.4 1.5 1.6 1.7 1.8 1.9 2.0 2.5; do
+  ROW=${hagl}
+  for pitch in -8 -4 -2 0 2 4 8 12 16; do
+    roll=0
+    dir=${BASE}/p${hagl}ft_r${roll}_p${pitch}
     ROW=${ROW}`awk 'BEGIN {
              U = 8.0*3.2808399; Rho = 1.0; G = 1.0;
              k_M = U^4 * Rho * G;

@@ -1,11 +1,11 @@
 #!/bin/bash
-# Copyright (C) 2012 - 2015  Anders Gidenstam  (anders(at)gidenstam.org)
+# Copyright (C) 2012 - 2017  Anders Gidenstam  (anders(at)gidenstam.org)
 # This file is licensed under the GPL license version 2 or later.
 #
 # Usage: run_experiment.sh <base dir> <name base>
 
 # Setup paths for gerris.
-. /opt/Gerris/setpaths.sh
+#. /opt/Gerris/setpaths.sh
 
 BASEDIR=$1
 BASE=$2
