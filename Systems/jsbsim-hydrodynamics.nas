@@ -2,7 +2,7 @@
 ##
 ## JSBSim hydrodynamics system. FlightGear side.
 ##
-##  Copyright (C) 2015  Anders Gidenstam  (anders(at)gidenstam.org)
+##  Copyright (C) 2015 - 2017  Anders Gidenstam  (anders(at)gidenstam.org)
 ##  This file is licensed under the GPL license v2 or later.
 ##
 ###############################################################################
@@ -47,7 +47,8 @@ var enableOSD = func {
     left.add("/fdm/jsbsim/hydro/roll-deg");
     left.add("/fdm/jsbsim/hydro/floats/pitch-deg");
     left.add("/fdm/jsbsim/hydro/floats/roll-deg");
-    left.add("/fdm/jsbsim/hydro/floats/height-agl-ft");
+    left.add("/fdm/jsbsim/hydro/floats/height-agl-ft[0]");
+    left.add("/fdm/jsbsim/hydro/floats/height-agl-ft[1]");
     left.add("/fdm/jsbsim/position/h-sl-ft");
     left.add("/fdm/jsbsim/hydro/environment/water-level-ft");
     left.add("/fdm/jsbsim/inertia/cg-x-in");

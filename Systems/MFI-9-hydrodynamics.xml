@@ -322,7 +322,7 @@
     <sum>
      <property>hydro/height-agl-ft</property>
      <product>
-      <value>0.083333333</value>
+      <value>-0.083333333</value>
       <property>hydro/float-rp-arm-y-in[0]</property>
       <sin><property>attitude/phi-rad</property></sin>
      </product>
@@ -365,7 +365,7 @@
     <sum>
      <property>hydro/height-agl-ft</property>
      <product>
-      <value>0.083333333</value>
+      <value>-0.083333333</value>
       <property>hydro/float-rp-arm-y-in[1]</property>
       <sin><property>attitude/phi-rad</property></sin>
      </product>
@@ -1059,7 +1059,7 @@
    </description>
    <function>
     <product>
-     <value>1.0</value>
+     <value>-1.0</value>
      <property>hydro/buoyancy-lbs[0]</property>
      <value>0.083333333</value>
      <property>hydro/float-rp-arm-y-in[0]</property>
@@ -1074,7 +1074,7 @@
    </description>
    <function>
     <product>
-     <value>1.0</value>
+     <value>-1.0</value>
      <property>hydro/buoyancy-lbs[1]</property>
      <value>0.083333333</value>
      <property>hydro/float-rp-arm-y-in[1]</property>
