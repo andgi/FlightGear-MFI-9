@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
   MFI-9B aircraft for FlightGear.
 
@@ -12,6 +12,34 @@
   <description>MFI-9B aircraft.</description>
   <author>Anders Gidenstam</author>
   <aircraft-version>2017-03-18</aircraft-version>
+
+  <long-description>
+The Malmö Flygindustri MFI-9 'Junior' was designed by Björn Andreasson based on his earlier home-built aircraft BA-7. The first flight of the MFI-9 prototype was on May 17 1961. By 1964 23 aircraft had been built and the next model, MFI-9B 'Trainer' with a slightly enlarged cockpit, was introduced. By the end of production in 1971 47 MFI-9B had been produced and most of the earlier MFI-9 'Junior' had been upgraded to 9B status.
+
+In Germany MFI-9 'Junior' was built under license by Bölkow as the Bo 208 'Junior'.
+  </long-description>
+
+  <tags>
+   <tag>ga</tag>
+   <tag>MFI</tag>
+   <tag>MFI-9</tag>
+   <tag>MFI-9B</tag>
+   <tag>piston</tag>
+   <tag>single-engine</tag>
+   <tag>1-engine</tag>
+   <tag>fixed-pitch</tag>
+   <tag>propeller</tag>
+   <tag>100hp</tag>
+   <tag>shoulder-wing</tag>
+   <tag>fixed-gear</tag>
+   <tag>tricycle</tag>
+   <tag>seaplane</tag>
+   <tag>floatplane</tag>
+   <tag>trainer</tag>
+   <tag>civilian</tag>
+   <tag>military</tag>
+   <tag>1960s</tag>
+  </tags>
 
   <status type="string">alpha</status>
   <rating>
