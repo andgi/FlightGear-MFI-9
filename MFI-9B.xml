@@ -3,7 +3,7 @@
 
   MFI-9B flight model for JSBSim.
 
-    Copyright (C) 2012 - 2017  Anders Gidenstam  (anders(at)gidenstam.org)
+    Copyright (C) 2012 - 2018  Anders Gidenstam  (anders(at)gidenstam.org)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@
   <email>anders at gidenstam dot org</email>
 
   <filecreationdate>2012-12-28</filecreationdate>
-  <version>2017-03-18</version>
+  <version>2018-10-30</version>
 
   <description>Models a MFI-9B aircraft.</description>
   <license>
@@ -422,7 +422,6 @@
 
  <propulsion>
   <documentation>
-
    According to [Bölkow:1965:BH] the choices of engine are
    - Continental O-200 A
    - Rolls-Royce O-200 A
@@ -707,80 +706,27 @@
    </direction>
   </force>
 
-  <force name="hydro-pitch[0]" frame="LOCAL" unit="LBS">
-   <location unit="M">
-    <x>  1.8052 </x>
-    <y>  0.00 </y>
-    <z> -0.98 </z>
-   </location>
+  <moment name="hydro-pitch" frame="BODY" unit="LBSFT">
    <direction>
     <x> 0.0 </x>
-    <y> 0.0 </y>
-    <z>-1.0 </z>
+    <y> 1.0 </y>
+    <z> 0.0 </z>
    </direction>
-  </force>
-  <force name="hydro-pitch[1]" frame="LOCAL" unit="LBS">
-   <location unit="M">
-    <x>  2.4148 </x>
-    <y>  0.00 </y>
-    <z> -0.98 </z>
-   </location>
-   <direction>
-    <x> 0.0 </x>
-    <y> 0.0 </y>
-    <z>-1.0 </z>
-   </direction>
-  </force>
-
-  <force name="hydro-roll[0]" frame="LOCAL" unit="LBS">
-   <location unit="M">
-    <x>  2.11 </x>
-    <y> -0.3048 </y>
-    <z> -0.98 </z>
-   </location>
-   <direction>
-    <x> 0.0 </x>
-    <y> 0.0 </y>
-    <z>-1.0 </z>
-   </direction>
-  </force>
-  <force name="hydro-roll[1]" frame="LOCAL" unit="LBS">
-   <location unit="M">
-    <x>  2.11 </x>
-    <y>  0.3048 </y>
-    <z> -0.98 </z>
-   </location>
-   <direction>
-    <x> 0.0 </x>
-    <y> 0.0 </y>
-    <z>-1.0 </z>
-   </direction>
-  </force>
-
-  <force name="hydro-yaw[0]" frame="BODY" unit="LBS">
-   <location unit="M">
-    <x>  2.11 </x>
-    <y> -0.3048 </y>
-    <z> -0.98 </z>
-   </location>
+  </moment>
+  <moment name="hydro-roll" frame="BODY" unit="LBSFT">
    <direction>
     <x> 1.0 </x>
     <y> 0.0 </y>
     <z> 0.0 </z>
    </direction>
-  </force>
-  <force name="hydro-yaw[1]" frame="BODY" unit="LBS">
-   <location unit="M">
-    <x>  2.11 </x>
-    <y>  0.3048 </y>
-    <z> -0.98 </z>
-   </location>
+  </moment>
+  <moment name="hydro-yaw" frame="BODY" unit="LBSFT">
    <direction>
-    <x> 1.0 </x>
+    <x> 0.0 </x>
     <y> 0.0 </y>
-    <z> 0.0 </z>
+    <z> 1.0 </z>
    </direction>
-  </force>
+  </moment>
 
  </external_reactions>
 
