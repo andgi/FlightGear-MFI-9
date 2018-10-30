@@ -2,7 +2,7 @@
 <!--
   MFI-9B aircraft for FlightGear.
 
-  Copyright (C) 2013 - 2017  Anders Gidenstam  (anders(at)gidenstam.org)
+  Copyright (C) 2013 - 2018  Anders Gidenstam  (anders(at)gidenstam.org)
   This file is licensed under the GPL license version 2 or later.
 -->
 <PropertyList>
@@ -14,31 +14,27 @@
  <!-- Preliminary primary instruments. Top-bottom, left-right  -->
  <model>
   <name>Magnetic Compass</name>
-  <path>Aircraft/c172p/Models/Interior/Panel/Instruments/mag-compass/mag-compass.xml</path>
+  <path>Aircraft/Instruments-3d/mag-compass.xml</path>
   <offsets>
    <x-m>0.000</x-m>
    <y-m>0.000</y-m>
-   <z-m>0.210</z-m>
+   <z-m>0.215</z-m>
+   <pitch-deg>-10.0</pitch-deg>
   </offsets>
  </model>
 
  <model>
   <name>Airspeed Speed Indicator</name>
-  <path>Aircraft/c172p/Models/Interior/Panel/Instruments/asi/asi.xml</path>
+  <path>Aircraft/Instruments-3d/asi-pa24/asi.xml</path>
   <offsets>
    <x-m>-0.005</x-m>
    <y-m>-0.110</y-m>
    <z-m> 0.155</z-m>
   </offsets>
-  <overlay>
-   <animation n="1">
-    <property n="0">instrumentation/airspeed-indicator/indicated-speed-kt</property>
-   </animation>
-  </overlay>
  </model>
  <model>
   <name>Attitude Indicator</name>
-  <path>Aircraft/c172p/Models/Interior/Panel/Instruments/AI/AI.xml</path>
+  <path>Aircraft/Instruments-3d/ai/ai.xml</path>
   <offsets>
    <x-m>-0.005</x-m>
    <y-m> 0.000</y-m>
@@ -47,7 +43,7 @@
  </model>
  <model>
   <name>Vertical Speed Indicator</name>
-  <path>Aircraft/c172p/Models/Interior/Panel/Instruments/VSI/VSI.xml</path>
+  <path>Aircraft/Instruments-3d/vsi/vsi.xml</path>
   <offsets>
    <x-m>-0.005</x-m>
    <y-m> 0.110</y-m>
@@ -66,7 +62,7 @@
  </model>
  <model>
   <name>Horisontal Situation Indicator</name>
-  <path>Aircraft/c172p/Models/Interior/Panel/Instruments/hi/hi.xml</path>
+  <path>Aircraft/Instruments-3d/hi/hi.xml</path>
   <offsets>
    <x-m>-0.005</x-m>
    <y-m>0.000</y-m>

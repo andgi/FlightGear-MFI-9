@@ -2,7 +2,7 @@
 <!--
   MFI-9B aircraft for FlightGear.
 
-  Copyright (C) 2013 - 2015  Anders Gidenstam  (anders(at)gidenstam.org)
+  Copyright (C) 2013 - 2018  Anders Gidenstam  (anders(at)gidenstam.org)
   This file is licensed under the GPL license version 2 or later.
 -->
 <PropertyList>
@@ -32,19 +32,12 @@
  </model>
  <model>
   <name>RPM Indicator</name>
-  <path>Aircraft/c172p/Models/Interior/Panel/Instruments/RPM/RPM.xml</path>
+  <path>Aircraft/Instruments-3d/tach/tach.xml</path>
   <offsets>
    <x-m>0.005</x-m>
    <y-m>0.051</y-m>
    <z-m>0.115</z-m>
   </offsets>
-  <overlay>
-   <params>
-    <engine>
-     <rpm>engines/engine[0]/rpm</rpm>
-    </engine>
-   </params>
-  </overlay>
  </model>
 
  <model>
