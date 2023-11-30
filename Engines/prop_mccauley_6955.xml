@@ -2,10 +2,10 @@
 <!--
   MFI-9B aircraft for FlightGear.
 
-  Copyright (C) 2013 - 2015  Anders Gidenstam  (anders(at)gidenstam.org)
+  Copyright (C) 2013 - 2023  Anders Gidenstam  (anders(at)gidenstam.org)
   This file is licensed under the GPL license version 2 or later.
 -->
-<propeller name="McCauley 1A100/MCM6955 Fixed-Pitch Propeller">
+<propeller name="McCauley 1A100/MCM6955 Fixed-Pitch Propeller" version="1.1">
  <documentation>
    JavaProp:
      Designed for 95 knots (level cruise 59hp@2300 RPM).
